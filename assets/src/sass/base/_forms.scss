@@ -1,0 +1,72 @@
+form {
+  input,
+  select,
+  optgroup,
+  textarea {
+    width: 100%;
+    transition: $transition-default;
+    &:focus {
+      border: 2px solid $secondary;
+    }
+  }
+}
+
+textarea {
+  display: block;
+  width: 100%;
+}
+
+input,
+select,
+optgroup,
+textarea {
+  line-height: 1;
+  @include padding(16px);
+  border: 2px solid $primary;
+  border-radius: 1rem;
+  &:focus {
+    outline: none;
+  }
+}
+
+// Search form
+form.search-form {
+  display: flex;
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+    .search-submit {
+      margin-top: 20px;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    > label {
+      flex: 1 1 70%;
+    }
+    .search-submit {
+      flex: 1 1 30%;
+      margin-left: 20px;
+    }
+  }
+}
+
+// Contact form 7
+form.wpcf7-form {
+  .wpcf7-form-control-wrap {
+    display: block;
+    @include margin-bottom(20px);
+  }
+  .wpcf7-form-control {
+    &.wpcf7-not-valid {
+      border: 2px solid $red;
+    }
+    &:focus {
+      border: 2px solid $cyan;
+    }
+  }
+  .wpcf7-response-output {
+    @include margin(0 0 40px);
+  }
+  .ajax-loader {
+    margin-top: 5px;
+  }
+}

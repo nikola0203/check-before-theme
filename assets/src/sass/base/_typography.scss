@@ -1,0 +1,51 @@
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	text-transform: uppercase;
+	color: $primary;
+}
+
+h1,
+.h1 {
+	@include font-size(48px);
+	@include margin-bottom(30px);
+}
+
+h2,
+.h2 {
+	@include margin-bottom(25px);
+}
+
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5, 
+h6,
+.h6 {
+	@include margin-bottom(20px);
+}
+
+body {
+	&:not(.single-post):not(.single-page) {
+		h2,
+		.h2 {
+			@include font-size(32px);
+		}
+	
+		h3,
+		.h3 {
+			@include font-size(20px);
+		}
+	}
+}

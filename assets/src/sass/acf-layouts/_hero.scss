@@ -1,0 +1,11 @@
+section.hero {
+  @include padding-top(60px);
+  @include padding-bottom(60px);
+  .hero__description p {
+    color: $white;
+  }
+  .hero__description {
+    @include font-size(24px);
+  	@include margin-bottom(30px);
+  }
+}

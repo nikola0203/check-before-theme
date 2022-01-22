@@ -1,0 +1,16 @@
+.two_col_3_9 {
+  background-color: $cyan-100;
+  &-image {
+    width: 100%;
+    max-width: 300px;
+  }
+  @include media-breakpoint-up(md) {
+    &-content {
+      p {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

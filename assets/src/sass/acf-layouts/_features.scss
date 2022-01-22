@@ -1,0 +1,19 @@
+section.features {
+  background-color: $primary;
+  @include padding-bottom(40px);
+  .features__desc {
+    p {
+      @include font-size(20px);
+      @include margin-bottom(60px);
+    }
+  }
+  .features__item {
+    @include margin-bottom(40px);
+    .features__item-icon {
+      @include font-size(60px);
+    }
+    .features__item-icon {
+      @include margin-bottom(20px);
+    }
+  }
+} 

@@ -1,0 +1,42 @@
+section.faq {
+  .section__title {
+    @include margin-bottom(60px);
+  }
+  .faq__wrapper {
+    &-question {
+      cursor: pointer;
+      text-transform: none;
+      transition: $transition-default;
+      @include transition( color $time $ease );
+      &:hover,
+      &.active {
+        color: $cyan;
+      }
+      i {
+        transition: $transition-default;
+        @include transition( transform $time $ease );
+      }
+      &.active {
+        i {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+    &-answer {
+      @include padding-top(16px);
+      p {
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(sm) {
+    .faq__wrapper {
+      &-answer {
+        @include padding-left(8px);
+        @include padding-right(8px);
+      }
+    }
+  }
+}

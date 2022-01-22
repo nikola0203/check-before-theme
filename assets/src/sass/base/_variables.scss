@@ -1,0 +1,39 @@
+/*-------------------------
+*  Bootstrap
+*--------------------------*/
+
+// Color system
+$primary: #103042;
+$secondary: #87ddc3;
+$cyan: #30c7ef;
+// $gray-600: #6c757d;
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+$enable-negative-margins: true;
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+$font-family-base: 'Roboto', sans-serif; 
+$font-size-base: 1.125rem;
+
+// Body
+//
+// Settings for the `<body>` element.
+$body-color: #495057;
+
+// Paragraphs
+//
+// Style p element.
+$paragraph-margin-bottom: 1.25rem;
+
+/*-------------------------
+*  Custom
+*--------------------------*/
+$time: 320ms;
+$ease: ease;
+
+// Animations
+$transition-default: all $time $ease;

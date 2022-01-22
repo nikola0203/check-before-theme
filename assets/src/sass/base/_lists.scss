@@ -1,0 +1,10 @@
+ul:not(.menu),
+ol {
+  @include margin-bottom(20px);
+  li {
+    @include margin-bottom(6px);
+    &::marker {
+      color: $cyan;
+    }
+  }
+}

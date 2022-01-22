@@ -1,0 +1,8 @@
+#fivestarclean-custom-css-wrapper {
+  position: relative;
+  height: 500px;
+  width: 100%;
+  @media (min-width:992px) {
+    max-width: 70%;
+  }
+}

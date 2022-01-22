@@ -1,0 +1,6 @@
+section.cta {
+  .section__title {
+    @include font-size(60px);
+    @include margin-bottom(60px);
+  }
+}

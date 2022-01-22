@@ -1,0 +1,37 @@
+footer.site-footer {
+	.site-footer-widgets-wrapper {
+		background-color: $primary;
+	}
+	.site-info {
+		background-color: lighten( $primary, 10% );
+	}
+	ul {
+		list-style: none;
+	}
+	ul.footer-social-icons {
+		li {
+			@include padding-left(15px);
+			&:first-child {
+				padding-left: 0;
+			}
+			a {
+				i {
+					@include font-size(34px);
+				}
+			}
+		}
+	}
+	ul.menu {
+		padding-left: 0;
+		li {
+			@include padding-top(5px);
+			@include padding-bottom(5px);
+		}
+	}
+	ul.menu li.menu-item a {
+		color: $white;
+		&:hover {
+			color: $cyan;
+		}
+	}
+}

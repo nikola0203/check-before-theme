@@ -1,0 +1,10 @@
+.hero {
+  @include media-breakpoint-up(md) {
+    display: flex;
+    align-items: center;
+    min-height: 460px;
+    &__posts {
+      min-height: 320px;
+    }
+  }
+}

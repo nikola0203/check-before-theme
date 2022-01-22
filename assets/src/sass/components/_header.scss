@@ -1,0 +1,160 @@
+/*
+	Primary Menu
+*/
+#site-navigation {
+	.container {
+		display: flex;
+	}
+	#primary-menu-container {
+		ul.menu,
+		ul.sub-menu {
+			list-style: none;
+			margin-bottom: 0;
+			li.menu-item {
+				margin-bottom: 0;
+				a {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					i {
+						transition: $transition-default;
+					}
+					&.active {
+						i {
+							transform: rotate(180deg);
+						}	
+					}
+				}
+			}
+			li.menu-item-has-children {
+				position: relative;
+				ul {
+					padding-left: 5px;
+				}
+			}
+		}
+		ul.menu {
+			padding-left: 0;
+			> li.menu-item {
+				> a {
+					text-transform: uppercase;
+				}
+			}
+			> li.menu-item-has-children {
+				> ul.sub-menu {
+					li.menu-item {
+						a {
+							@include padding(5px 0);
+						}
+					}
+				}
+			}
+		}
+		ul.sub-menu {
+			display: none;
+		}
+	}
+	#header-top-menu {
+		li {
+			@include margin-left(15px);
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+		li.btn {
+			@include padding(12px 20px);
+		}
+	}
+  @include media-breakpoint-down(lg) {
+		.container {
+			flex-direction: column;
+		}
+		.nav-logo-btn-wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		#primary-menu-container {
+			display: none;
+			@include padding-top(20px);
+			ul.menu,
+			ul.sub-menu {
+				li.menu-item {
+					a {
+						@include padding(14px 0);
+					}
+				}
+			}
+			ul.menu {
+				> li.menu-item {
+					> a {
+						@include font-size(18px);
+						@include padding(14px 0);
+					}
+				}
+			}
+		}
+	}
+  @include media-breakpoint-up(lg) {
+		.container {
+			align-items: center;
+		}
+		.navbar-toggler {
+			display: none;
+		}
+		#primary-menu-container {
+			ul.menu,
+			ul.sub-menu {
+				li.current-menu-item {
+					> a {
+						color: $cyan;
+					}
+				}
+				li.menu-item {
+					a {
+						&:hover,
+						&:active,
+						&:focus {
+							color: $cyan;
+						}
+					}
+				}
+			}
+			ul.menu {
+				display: flex;
+				align-items: center;
+				> li.menu-item {
+					> a {
+						@include padding(10px);
+					}
+				}
+				> li.menu-item-has-children {
+					> ul.sub-menu {
+						position: absolute;
+						left: 0;
+						top: 44px;
+						width: 100%;
+						min-width: 240px;
+						z-index: 1;
+						background: $white;
+						@include padding(10px 15px);
+						@include border-radius(15px);
+						border: 2px solid $primary;
+					}
+				}
+			}
+		}
+	}
+  @include media-breakpoint-up(xl) {
+		#primary-menu-container {
+			ul.menu {
+				> li.menu-item {
+					> a {
+						@include font-size(18px);
+						@include padding(10px 16px);
+					}
+				}
+			}
+		}
+	}
+}
