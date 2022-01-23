@@ -18,9 +18,9 @@ class TextWidget extends WP_Widget
 	public $control_options = array();
 
 	function __construct() {
-		$this->widget_ID = 'widget_fivestarclean';
+		$this->widget_ID = 'widget_check_before_theme';
 
-		$this->widget_name = 'checkbeforetheme Custom Text';
+		$this->widget_name = 'check_before_theme Custom Text';
 
 		$this->widget_options = array(
 			'classname'                   => $this->widget_ID,
@@ -76,10 +76,10 @@ class TextWidget extends WP_Widget
 	 * @param array $instance The widget options
 	 */
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Custom Text', 'checkbeforetheme' );
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Custom Text', 'check_before_theme' );
 		?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'checkbeforetheme' ); ?></label> 
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'check_before_theme' ); ?></label> 
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 		</p>
 		<?php 

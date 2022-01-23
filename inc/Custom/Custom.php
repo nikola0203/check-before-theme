@@ -2,7 +2,7 @@
 
 namespace CheckBeforeTheme\Custom;
 
-use CheckBeforeTheme\Api\Customizer;
+// use CheckBeforeTheme\Api\Customizer;
 use CheckBeforeTheme\Plugins\Acf;
 
 /**
@@ -69,7 +69,7 @@ class Custom
 		$excerpt = substr( $excerpt, 0, $limit );
 		$excerpt = substr( $excerpt, 0, strripos( $excerpt, " " ) );
 		$excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt ) );
-		// $excerpt = $excerpt . '... <a href="' . get_permalink( get_the_ID() ) . '">' . esc_html( 'read more', 'checkbeforetheme' ) . '</a>';
+		// $excerpt = $excerpt . '... <a href="' . get_permalink( get_the_ID() ) . '">' . esc_html( 'read more', 'check_before_theme' ) . '</a>';
 		$excerpt = $excerpt . '...';
 		return $excerpt;
 	}

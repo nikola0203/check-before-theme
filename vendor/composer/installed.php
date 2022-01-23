@@ -6,7 +6,7 @@
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'reference' => NULL,
-        'name' => 'nikola0203/checkbeforetheme',
+        'name' => 'nikola0203/check_before_theme',
         'dev' => true,
     ),
     'versions' => array(
@@ -19,7 +19,7 @@
             'reference' => '0690bde05318336c7221785f2a932467f98b64ca',
             'dev_requirement' => false,
         ),
-        'nikola0203/checkbeforetheme' => array(
+        'nikola0203/check_before_theme' => array(
             'pretty_version' => '1.0.0',
             'version' => '1.0.0.0',
             'type' => 'wordpress-theme',

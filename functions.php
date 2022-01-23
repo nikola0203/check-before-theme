@@ -5,7 +5,7 @@
  * Every function, hook and action is properly divided and organized inside related folders and files
  * Use the file `app/Custom/Custom.php` to write your custom functions
  *
- * @package checkbeforetheme
+ * @package check_before_theme
  */
 
 if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) :

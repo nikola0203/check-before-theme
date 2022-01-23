@@ -3,7 +3,7 @@
  * Helpers methods.
  * List all your static functions you wish to use globally on your theme.
  *
- * @package checkbeforetheme
+ * @package check_before_theme
  */
 
 if ( ! function_exists( 'dd' ) ) {

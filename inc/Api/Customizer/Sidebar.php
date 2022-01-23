@@ -2,7 +2,7 @@
 /**
  * Theme Customizer - Sidebar.
  *
- * @package checkbeforetheme
+ * @package check_before_theme
  */
 
 namespace CheckBeforeTheme\Api\Customizer;
@@ -24,16 +24,16 @@ class Sidebar
 	public function register( $wp_customize ) 
 	{
 		$wp_customize->add_section(
-			'fivestarclean_sidebar_section',
+			'check_before_theme_sidebar_section',
 			array(
-				'title'       => __( 'Sidebar', 'checkbeforetheme' ),
+				'title'       => __( 'Sidebar', 'check_before_theme' ),
 				'description' => __( 'Customize the Sidebar' ),
 				'priority'    => 161
 			)
 		); 
 
 		$wp_customize->add_setting(
-			'fivestarclean_sidebar_background_color',
+			'check_before_theme_sidebar_background_color',
 			array(
 				'default'   => '#ffffff',
 				'transport' => 'postMessage', // or refresh if you want the entire page to reload.
@@ -43,20 +43,20 @@ class Sidebar
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
-				'fivestarclean_sidebar_background_color',
+				'check_before_theme_sidebar_background_color',
 				array(
-					'label'    => __( 'Background Color', 'checkbeforetheme' ),
-					'section'  => 'fivestarclean_sidebar_section',
-					'settings' => 'fivestarclean_sidebar_background_color',
+					'label'    => __( 'Background Color', 'check_before_theme' ),
+					'section'  => 'check_before_theme_sidebar_section',
+					'settings' => 'check_before_theme_sidebar_background_color',
 				)
 			)
 		);
 
 		if ( isset( $wp_customize->selective_refresh ) ) {
 			$wp_customize->selective_refresh->add_partial(
-				'fivestarclean_sidebar_background_color',
+				'check_before_theme_sidebar_background_color',
 					array(
-					'selector'         => '#checkbeforetheme-sidebar-control',
+					'selector'         => '#check_before_theme-sidebar-control',
 					'render_callback'  => array( $this, 'output' ),
 					'fallback_refresh' => true
 				)
@@ -72,7 +72,7 @@ class Sidebar
 	public function output()
 	{
 		echo '<style type="text/css">';
-			echo Customizer::css( '#sidebar', 'background-color', 'fivestarclean_sidebar_background_color' );
+			echo Customizer::css( '#sidebar', 'background-color', 'check_before_theme_sidebar_background_color' );
 		echo '</style>';
 	}
 }

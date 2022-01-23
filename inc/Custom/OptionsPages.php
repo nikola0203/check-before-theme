@@ -19,11 +19,11 @@ class OptionsPages
 
   public function add_admin_page() {
     add_submenu_page(
-      'checkbeforetheme-general-settings',
+      'check_before_theme-general-settings',
       'Sunset CSS Options',
       'Custom CSS',
       'manage_options',
-      'checkbeforetheme-custom-css',
+      'check_before_theme-custom-css',
       array( $this, 'theme_settings_page' )
     );
   }
@@ -35,7 +35,7 @@ class OptionsPages
   public function custom_settings() {
     register_setting(
       'custom-css-options',
-      'fivestarclean_admin_custom_css',
+      'check_before_theme_admin_custom_css',
       array( $this, 'sanitize_custom_css' )
     );
     
@@ -43,14 +43,14 @@ class OptionsPages
       'sunset-custom-css-section',
       '',
       array( $this, 'custom_css_section_callback' ),
-      'checkbeforetheme-custom-css'
+      'check_before_theme-custom-css'
     );
     
     add_settings_field(
       'custom-css',
       'Insert your Custom CSS',
       array( $this, 'custom_css_callback' ),
-      'checkbeforetheme-custom-css',
+      'check_before_theme-custom-css',
       'sunset-custom-css-section'
     );
   }
@@ -65,10 +65,10 @@ class OptionsPages
   }
   
   public function custom_css_callback() {
-    $css = get_option( 'fivestarclean_admin_custom_css' );
+    $css = get_option( 'check_before_theme_admin_custom_css' );
     
-    $html = '<div id="checkbeforetheme-custom-css-wrapper">' . $css . '</div>';
-    $html .= '<textarea id="fivestarclean_admin_custom_css" name="fivestarclean_admin_custom_css" style="display:none;visibility:hidden;">' . $css . '</textarea>';
+    $html = '<div id="check_before_theme-custom-css-wrapper">' . $css . '</div>';
+    $html .= '<textarea id="check_before_theme_admin_custom_css" name="check_before_theme_admin_custom_css" style="display:none;visibility:hidden;">' . $css . '</textarea>';
 
     echo $html;
   }

@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Check_Before_Theme
+ * @package check_before_theme
  */
 
 /*

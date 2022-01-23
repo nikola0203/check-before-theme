@@ -34,7 +34,7 @@ class PostTypes
 				'plural'             => 'Artists',
 				'menu_icon'          => 'dashicons-admin-customizer',
 				'menu_position'      => 18,
-				'text_domain'        => 'checkbeforetheme',
+				'text_domain'        => 'check_before_theme',
 				'supports'           => array( 'title', /*'editor', 'thumbnail' , 'excerpt', 'author', 'comments'*/ ),
 				'description'        => 'Artists Custom Post Type',
 				'public'             => true,

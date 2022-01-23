@@ -4,7 +4,7 @@
  *
  * @link https://wordpress.org/plugins/contact-form-7/
  *
- * @package checkbeforetheme
+ * @package check_before_theme
  */
 
 namespace CheckBeforeTheme\Plugins;

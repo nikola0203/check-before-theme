@@ -2,7 +2,7 @@
 /**
  * Theme Customizer - Footer.
  *
- * @package checkbeforetheme
+ * @package check_before_theme
  */
 
 namespace CheckBeforeTheme\Api\Customizer;
@@ -28,23 +28,23 @@ class Footer
 	public function register( $wp_customize ) 
 	{
 		$wp_customize->add_section(
-			'fivestarclean_footer_section',
+			'check_before_theme_footer_section',
 			array(
-				'title'       => __( 'Footer', 'checkbeforetheme' ),
+				'title'       => __( 'Footer', 'check_before_theme' ),
 				'description' => __( 'Customize the Footer' ),
 				'priority'    => 162
 			)
 		); 
 
 		$wp_customize->add_setting(
-			'fivestarclean_footer_logo',
+			'check_before_theme_footer_logo',
 			array(
 				'sanitize_callback' => 'absint',
 			)
 		);
 
 		$wp_customize->add_setting(
-			'fivestarclean_footer_top_background_color',
+			'check_before_theme_footer_top_background_color',
 			array(
 				'default'   => '#ffffff',
 				'transport' => 'postMessage', // or refresh if you want the entire page to reload.
@@ -52,45 +52,45 @@ class Footer
 		);
 
 		$wp_customize->add_setting(
-			'fivestarclean_facebook_url',
+			'check_before_theme_facebook_url',
 			array(
 				'capability'        => 'edit_theme_options',
-				// 'sanitize_callback' => array( $this, 'fivestarclean_sanitize_url' ),
+				// 'sanitize_callback' => array( $this, 'check_before_theme_sanitize_url' ),
 				'transport'         => 'postMessage', // or refresh if you want the entire page to reload.
 			)
 		);
 
 		$wp_customize->add_setting(
-			'fivestarclean_linkedin_url',
+			'check_before_theme_linkedin_url',
 			array(
 				'capability'        => 'edit_theme_options',
-				// 'sanitize_callback' => array( $this, 'fivestarclean_sanitize_url' ),
+				// 'sanitize_callback' => array( $this, 'check_before_theme_sanitize_url' ),
 				'transport'         => 'postMessage', // or refresh if you want the entire page to reload.
 			)
 		);
 
 		$wp_customize->add_setting(
-			'fivestarclean_instagram_url',
+			'check_before_theme_instagram_url',
 			array(
 				'capability'        => 'edit_theme_options',
-				// 'sanitize_callback' => array( $this, 'fivestarclean_sanitize_url' ),
+				// 'sanitize_callback' => array( $this, 'check_before_theme_sanitize_url' ),
 				'transport'         => 'postMessage', // or refresh if you want the entire page to reload.
 			)
 		);
 
 		$wp_customize->add_setting(
-			'fivestarclean_twitter_url',
+			'check_before_theme_twitter_url',
 			array(
 				'capability'        => 'edit_theme_options',
-				// 'sanitize_callback' => array( $this, 'fivestarclean_sanitize_url' ),
+				// 'sanitize_callback' => array( $this, 'check_before_theme_sanitize_url' ),
 				'transport'         => 'postMessage', // or refresh if you want the entire page to reload.
 			)
 		);
 
 		$wp_customize->add_setting(
-			'fivestarclean_footer_copy_text',
+			'check_before_theme_footer_copy_text',
 			array(
-				'default'   => __( 'Proudly powered by checkbeforetheme', 'checkbeforetheme' ),
+				'default'   => __( 'Proudly powered by check_before_theme', 'check_before_theme' ),
 				'transport' => 'postMessage', // or refresh if you want the entire page to reload.
 			)
 		);
@@ -98,11 +98,11 @@ class Footer
 		$wp_customize->add_control(
 			new WP_Customize_Media_Control(
 				$wp_customize,
-				'fivestarclean_footer_logo',
+				'check_before_theme_footer_logo',
 				array(
-					'label'    => __( 'Upload Footer Logo', 'checkbeforetheme' ),
-					'section'  => 'fivestarclean_footer_section',
-					'settings' => 'fivestarclean_footer_logo',
+					'label'    => __( 'Upload Footer Logo', 'check_before_theme' ),
+					'section'  => 'check_before_theme_footer_section',
+					'settings' => 'check_before_theme_footer_logo',
 					'width' => 250,
 					'height' => 250,
 					'flex-width' => true,
@@ -111,11 +111,11 @@ class Footer
 		);
 
 		$wp_customize->add_control(
-			'fivestarclean_facebook_url',
+			'check_before_theme_facebook_url',
 			array(
 				'type'     => 'url',
-				'section'  => 'fivestarclean_footer_section',   // Add a default or your own section
-				'settings' => 'fivestarclean_facebook_url',
+				'section'  => 'check_before_theme_footer_section',   // Add a default or your own section
+				'settings' => 'check_before_theme_facebook_url',
 				'label'    => __( 'Facebook URL' ),
 				// 'description' => __( 'This is a custom url input.' ),
 				'input_attrs' => array(
@@ -125,10 +125,10 @@ class Footer
 		);
 
 		$wp_customize->add_control(
-			'fivestarclean_linkedin_url',
+			'check_before_theme_linkedin_url',
 			array(
 				'type' => 'url',
-				'section' => 'fivestarclean_footer_section', // Add a default or your own section
+				'section' => 'check_before_theme_footer_section', // Add a default or your own section
 				'label' => __( 'LinkedIn URL' ),
 				// 'description' => __( 'This is a custom url input.' ),
 				'input_attrs' => array(
@@ -138,10 +138,10 @@ class Footer
 		);
 
 		$wp_customize->add_control(
-			'fivestarclean_instagram_url',
+			'check_before_theme_instagram_url',
 			array(
 				'type' => 'url',
-				'section' => 'fivestarclean_footer_section', // Add a default or your own section
+				'section' => 'check_before_theme_footer_section', // Add a default or your own section
 				'label' => __( 'Instagram URL' ),
 				// 'description' => __( 'This is a custom url input.' ),
 				'input_attrs' => array(
@@ -151,10 +151,10 @@ class Footer
 		);
 
 		$wp_customize->add_control(
-			'fivestarclean_twitter_url',
+			'check_before_theme_twitter_url',
 			array(
 				'type' => 'url',
-				'section' => 'fivestarclean_footer_section', // Add a default or your own section
+				'section' => 'check_before_theme_footer_section', // Add a default or your own section
 				'label' => __( 'Twitter URL' ),
 				// 'description' => __( 'This is a custom url input.' ),
 				'input_attrs' => array(
@@ -166,11 +166,11 @@ class Footer
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
-				'fivestarclean_footer_top_background_color',
+				'check_before_theme_footer_top_background_color',
 				array(
-					'label'    => __( 'Background Top', 'checkbeforetheme' ),
-					'section'  => 'fivestarclean_footer_section',
-					'settings' => 'fivestarclean_footer_top_background_color',
+					'label'    => __( 'Background Top', 'check_before_theme' ),
+					'section'  => 'check_before_theme_footer_section',
+					'settings' => 'check_before_theme_footer_top_background_color',
 				)
 			)
 		);
@@ -178,29 +178,29 @@ class Footer
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
-				'fivestarclean_footer_copy_text',
+				'check_before_theme_footer_copy_text',
 				array(
-					'label'    => __( 'Copyright Text', 'checkbeforetheme' ),
-					'section'  => 'fivestarclean_footer_section',
-					'settings' => 'fivestarclean_footer_copy_text',
+					'label'    => __( 'Copyright Text', 'check_before_theme' ),
+					'section'  => 'check_before_theme_footer_section',
+					'settings' => 'check_before_theme_footer_copy_text',
 				)
 			)
 		);
 
 		if ( isset( $wp_customize->selective_refresh ) ) {
 			$wp_customize->selective_refresh->add_partial(
-				'fivestarclean_footer_top_background_color',
+				'check_before_theme_footer_top_background_color',
 				array(
-					'selector'         => '#checkbeforetheme-footer-control',
+					'selector'         => '#check_before_theme-footer-control',
 					'render_callback'  => array( $this, 'outputCss' ),
 					'fallback_refresh' => true
 				)
 			);
 
 			$wp_customize->selective_refresh->add_partial(
-				'fivestarclean_footer_copy_text',
+				'check_before_theme_footer_copy_text',
 				array(
-					'selector'         => '#checkbeforetheme-footer-copy-control',
+					'selector'         => '#check_before_theme-footer-copy-control',
 					'render_callback'  => array( $this, 'outputText' ),
 					'fallback_refresh' => true
 				)
@@ -216,7 +216,7 @@ class Footer
 	public function outputCss()
 	{
 		echo '<style type="text/css">';
-			echo Customizer::css( '.site-footer', 'background-color', 'fivestarclean_footer_top_background_color' );
+			echo Customizer::css( '.site-footer', 'background-color', 'check_before_theme_footer_top_background_color' );
 		echo '</style>';
 	}
 
@@ -227,7 +227,7 @@ class Footer
 	 */
 	public function outputText()
 	{
-		echo Customizer::text( 'fivestarclean_footer_copy_text' );
+		echo Customizer::text( 'check_before_theme_footer_copy_text' );
 	}
 
 	/**
@@ -235,7 +235,7 @@ class Footer
 	 *
 	 * @return url
 	 */
-	public function fivestarclean_sanitize_url()
+	public function check_before_theme_sanitize_url()
 	{
 		return esc_url_raw( $url );
 	}

@@ -2,14 +2,14 @@
 /**
  * Theme Customizer.
  *
- * @package checkbeforetheme
+ * @package check_before_theme
  */
 
 namespace CheckBeforeTheme\Api;
 
 // use CheckBeforeTheme\Api\Customizer\Sidebar;
 // use CheckBeforeTheme\Api\Customizer\Header;
-// use CheckBeforeTheme\Api\Customizer\Footer;
+use CheckBeforeTheme\Api\Customizer\Footer;
 
 /**
  * Customizer class.
@@ -37,7 +37,7 @@ class Customizer
 		return [
 			// Sidebar::class,
 			// Header::class
-			// Footer::class,
+			Footer::class,
 		];
 	}
 
@@ -65,11 +65,11 @@ class Customizer
 	public function output()
 	{
 		echo '<!--Customizer CSS--> <style type="text/css">';
-			echo self::css( '#sidebar', 'background-color', 'fivestarclean_sidebar_background_color' );
-			echo self::css( '.site-footer', 'background-color', 'fivestarclean_footer_background_color' );
-			echo self::css( '.site-header', 'background-color', 'fivestarclean_header_background_color' );
-			echo self::css( '.site-header', 'color', 'fivestarclean_header_text_color' );
-			echo self::css( '.site-header a', 'color', 'fivestarclean_header_link_color' );
+			echo self::css( '#sidebar', 'background-color', 'check_before_theme_sidebar_background_color' );
+			echo self::css( '.site-footer', 'background-color', 'check_before_theme_footer_background_color' );
+			echo self::css( '.site-header', 'background-color', 'check_before_theme_header_background_color' );
+			echo self::css( '.site-header', 'color', 'check_before_theme_header_text_color' );
+			echo self::css( '.site-header a', 'color', 'check_before_theme_header_link_color' );
 		echo '</style><!--/Customizer CSS-->';
 	}
 

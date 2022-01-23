@@ -3,7 +3,7 @@
  *
  * This theme uses PSR-4 and OOP logic
  *
- * @package checkbeforetheme
+ * @package check_before_theme
  */
 
 namespace CheckBeforeTheme;

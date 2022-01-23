@@ -4,7 +4,7 @@
  *
  * @link https://github.com/elliotcondon/acf
  *
- * @package checkbeforetheme
+ * @package check_before_theme
  */
 
 namespace CheckBeforeTheme\Plugins;
@@ -50,7 +50,7 @@ class Acf
 			array(
 				'page_title' => 'Theme General Settings',
 				'menu_title' => 'Theme Settings',
-				'menu_slug'  => 'checkbeforetheme-general-settings',
+				'menu_slug'  => 'check_before_theme-general-settings',
 				'capability' => 'edit_posts',
 				'redirect'   => false,
 				'icon_url'   => 'dashicons-star-filled',
@@ -61,8 +61,8 @@ class Acf
 		// 	array(
 		// 		'page_title'  => 'Header Settings',
 		// 		'menu_title'  => 'Header',
-		// 		'parent_slug' => 'checkbeforetheme-general-settings',
-		// 		'menu_slug'   => 'checkbeforetheme-header-settings',
+		// 		'parent_slug' => 'check_before_theme-general-settings',
+		// 		'menu_slug'   => 'check_before_theme-header-settings',
 		// 	)
 		// );
 	}

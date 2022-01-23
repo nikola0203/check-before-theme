@@ -42,10 +42,10 @@ class Enqueue
 		// CSS.
 		wp_enqueue_style( 'google-font', 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap', array(), '1.0.0', 'all' );
 		wp_enqueue_style( 'main', mix( 'css/style.css' ), array(), '1.0.0', 'all' );
-		wp_enqueue_style( 'checkbeforetheme', get_stylesheet_uri(), array( 'main' ), '1.0.0' );
+		wp_enqueue_style( 'check_before_theme', get_stylesheet_uri(), array( 'main' ), '1.0.0' );
 
 		// Admin options page CSS.
-		wp_add_inline_style( 'main', getOptionCss( 'fivestarclean_admin_custom_css' ) );
+		wp_add_inline_style( 'main', getOptionCss( 'check_before_theme_admin_custom_css' ) );
 
 		// JS.
 		wp_enqueue_script( 'main', mix( 'js/app.js' ), array(), '1.0.0', true );
@@ -62,12 +62,12 @@ class Enqueue
 	}
 
 	public function admin_enqueue_scripts( $hook ){
-		if ( 'theme-settings_page_fivestarclean-custom-css' == $hook ) {
-			wp_enqueue_style( 'ace', mix( 'css/admin/checkbeforetheme-custom-css-page.css' ), array(), '1.0.0', 'all' );
+		if ( 'theme-settings_page_check_before_theme-custom-css' == $hook ) {
+			wp_enqueue_style( 'ace', mix( 'css/admin/check_before_theme-custom-css-page.css' ), array(), '1.0.0', 'all' );
 
 			wp_enqueue_script( 'ace', mix( 'js/admin/ace/ace.js' ), array( 'jquery' ), '', true );
 			wp_enqueue_script( 'ace-ext-language_tools', mix( 'js/admin/ace/ext-language_tools.js' ), array( 'jquery', 'ace' ), '', true );
-			wp_enqueue_script( 'checkbeforetheme-custom-css-page', mix( 'js/admin/checkbeforetheme-custom-css-page.js' ), array( 'jquery' ), '1.0.0', true );
+			wp_enqueue_script( 'check_before_theme-custom-css-page', mix( 'js/admin/check_before_theme-custom-css-page.js' ), array( 'jquery' ), '1.0.0', true );
 		}
 	}
 }

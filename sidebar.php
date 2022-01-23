@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Check_Before_Theme
+ * @package check_before_theme
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

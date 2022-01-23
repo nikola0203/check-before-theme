@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Check_Before_Theme
+ * @package check_before_theme
  */
 
 get_header();
@@ -16,7 +16,7 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
+			get_template_part( 'template-parts/content', 'home' );
 
 		endwhile; // End of the loop.
 		?>

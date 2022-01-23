@@ -23,7 +23,7 @@ class Setup
     /**
 		 * Make theme available for translation.
 		 */
-		// load_theme_textdomain( 'checkbeforetheme', get_template_directory() . '/languages' );
+		// load_theme_textdomain( 'check_before_theme', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -64,7 +64,7 @@ class Setup
 		add_theme_support(
 			'custom-background',
 			apply_filters(
-				'fivestarclean_custom_background_args',
+				'check_before_theme_custom_background_args',
 				array(
 					'default-color' => 'ffffff',
 					'default-image' => '',
@@ -96,6 +96,6 @@ class Setup
     // This variable is intended to be overruled from themes.
     // Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
     // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-    $GLOBALS['content_width'] = apply_filters( 'fivestarclean_content_width', 1440 );
+    $GLOBALS['content_width'] = apply_filters( 'check_before_theme_content_width', 1440 );
   }
 }
