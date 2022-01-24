@@ -15,6 +15,9 @@
 	},
     "autoload": {
 		"psr-4": { "CheckBeforeTheme\\": "./inc" },
-		"files": [ "./inc/Helpers.php" ]
+		"files": [
+			"./inc/Helpers.php",
+			"./inc/SvgIcons.php"
+		]
 	}
 }

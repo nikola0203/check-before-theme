@@ -37,7 +37,8 @@
 			padding-left: 0;
 			> li.menu-item {
 				> a {
-					text-transform: uppercase;
+					font-weight: 700
+					// text-transform: uppercase;
 				}
 			}
 			> li.menu-item-has-children {
@@ -88,7 +89,7 @@
 			ul.menu {
 				> li.menu-item {
 					> a {
-						@include font-size(18px);
+						// @include font-size(16px);
 						@include padding(14px 0);
 					}
 				}
@@ -107,7 +108,7 @@
 			ul.sub-menu {
 				li.current-menu-item {
 					> a {
-						color: $cyan;
+						color: $secondary;
 					}
 				}
 				li.menu-item {
@@ -115,7 +116,7 @@
 						&:hover,
 						&:active,
 						&:focus {
-							color: $cyan;
+							color: $secondary;
 						}
 					}
 				}
@@ -150,7 +151,7 @@
 			ul.menu {
 				> li.menu-item {
 					> a {
-						@include font-size(18px);
+						// @include font-size(16px);
 						@include padding(10px 16px);
 					}
 				}

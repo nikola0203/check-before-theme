@@ -81,10 +81,28 @@
 	</div>
 	<div class="site-info py-3 txt-white txt-center">
 		<div class="container">
-			<?php
-			/* translators: 1: Theme name, 2: Theme author. */
-			printf( esc_html__( '%1$s', 'check_before_theme' ), 'Copyright ' . date( 'Y' ) . ' CheckBefore' );
-			?>
+			<div class="row">
+				<div class="col-lg-6">
+					<?php
+					/* translators: 1: Theme name, 2: Theme author. */
+					printf( esc_html__( '%1$s', 'check_before_theme' ), 'Copyright ' . date( 'Y' ) . ' CheckBefore' );
+					?>
+				</div>
+				<div class="col-lg-6">
+					<?php
+					if ( has_nav_menu( 'footer-menu-4' ) ) :
+						wp_nav_menu(
+							array(
+								'theme_location'  => 'footer-menu-4',
+								'menu_id'         => 'footer-menu-4',
+								'menu_class'      => 'menu mb-0',
+								'container_id'    => 'footer-menu-container',
+							)
+						);
+					endif;
+					?>
+				</div>
+			</div>
 		</div>
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->

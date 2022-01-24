@@ -8,9 +8,10 @@ class ComposerStaticInit3b47bbd86b8940f1c3a29a0bc698d54b
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
-        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        '5ab20d8c50d6cf93adf57ef7c82affac' => __DIR__ . '/../..' . '/inc/Helpers.php',
+        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
+        '0d599948569145ce354be00a8b059016' => __DIR__ . '/../..' . '/inc/Helpers.php',
+        '1a2e7b8fcb745a5df8fbd3504b5d04f3' => __DIR__ . '/../..' . '/inc/SvgIcons.php',
     );
 
     public static $prefixLengthsPsr4 = array (

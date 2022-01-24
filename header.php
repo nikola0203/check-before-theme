@@ -25,8 +25,8 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'check_before_theme' ); ?></a>
 
-	<header id="masthead" class="site-header relative">
-		<nav id="site-navigation" class="py-3 border-bottom border-2 border-primary" role="navigation">
+	<header id="masthead" class="site-header relative shadow">
+		<nav id="site-navigation" class="py-4" role="navigation">
 			<div class="container pe-lg-0">
 				<div class="nav-logo-btn-wrapper">
 					<?php the_custom_logo(); ?>

@@ -1,22 +1,27 @@
 .btn {
-  display: inline-block;
-  font-weight: 500;
+  display: inline-flex;
+  font-weight: 700;
   line-height: 1;
-  text-transform: uppercase;
+  // text-transform: uppercase;
+  color: $white;
   text-align: center;
-  @include padding( 22px 40px 22px 40px );
-  background-color: $white;
-  border-radius: 1rem;
-  border: 2px solid $primary;
+  @include padding(14.5px 38px);
+  background-color: $secondary;
+  border-radius: 5px;
+  // border: none;
   cursor: pointer;
 	@include transition(color $time $ease, background-color $time $ease, border $time $ease);
+
+  .icon-btn {
+    margin-left: 5px;
+  }
 
   &:hover,
   &:focus,
   &:active {
-    color: $black;
-    background-color: $secondary;
-    border: 2px solid $primary;
+    color: $white;
+    background-color: darken( $secondary, 10% );
+    // border: none;
   }
   
   &.btn-cyan {
@@ -38,7 +43,7 @@
     &:active {
       color: $primary;
       background-color: $cyan;
-      border: 2px solid $primary;
+      border: none;
     }
   }
   &.btn-secondary {

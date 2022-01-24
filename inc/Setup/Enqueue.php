@@ -14,17 +14,26 @@ class Enqueue
    */
 	public function register() 
 	{
-		add_action( 'wp_head', array( $this, 'preconnect_google_font' ), 1 );
+		add_action( 'wp_head', array( $this, 'preconnect_google_font' ), 5 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
   }
 
 	public function preconnect_google_font()
 	{
-		?>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<?php
+		$font_url = 'https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=Nunito:wght@400;500;700&display=swap';
+		$html = '<link rel="preconnect" href="https://fonts.googleapis.com">';
+		$html .= "\r\n";
+    $html .= '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
+		$html .= "\r\n";
+    $html .= '<link as="style" rel="preload" href="' . $font_url . '">';
+    $html .= "\r\n";
+    $html .= '<link rel="stylesheet" href="' . $font_url . '" media="print" onload="this.media=\'all\'">';
+		$html .= "\r\n";
+    $html .= '<noscript><link rel="stylesheet" href="' . $font_url . '"></noscript>';
+		$html .= "\r\n";
+
+		echo $html;
 	}
 
   /**
@@ -40,7 +49,6 @@ class Enqueue
 		}
 
 		// CSS.
-		wp_enqueue_style( 'google-font', 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap', array(), '1.0.0', 'all' );
 		wp_enqueue_style( 'main', mix( 'css/style.css' ), array(), '1.0.0', 'all' );
 		wp_enqueue_style( 'check_before_theme', get_stylesheet_uri(), array( 'main' ), '1.0.0' );
 

@@ -24,11 +24,11 @@ mix.disableSuccessNotifications();
 
 // Compile assets
 mix.js( 'assets/src/scripts/app.js', 'assets/dist/js' )
-	 .js( 'assets/src/scripts/admin/check_before_theme-custom-css-page.js', 'assets/dist/js/admin' )
+	//  .js( 'assets/src/scripts/admin/check_before_theme-custom-css-page.js', 'assets/dist/js/admin' )
 	 .sass( 'assets/src/sass/style.scss', 'assets/dist/css' )
-	 .sass( 'assets/src/sass/admin/check_before_theme-custom-css-page.scss', 'assets/dist/css/admin' )
+	//  .sass( 'assets/src/sass/admin/check_before_theme-custom-css-page.scss', 'assets/dist/css/admin' )
 	 .copy( 'node_modules/@fortawesome/fontawesome-free/webfonts', 'assets/dist/webfonts' )
-	 .copy( 'assets/src/scripts/admin/ace', 'assets/dist/js/admin/ace' );
+	//  .copy( 'assets/src/scripts/admin/ace', 'assets/dist/js/admin/ace' );
 
 // Add versioning to assets in production environment
 if ( mix.inProduction() ) {
