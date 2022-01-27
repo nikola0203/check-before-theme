@@ -11,21 +11,21 @@
 
 ?>
 
-<footer id="colophon" class="site-footer">
-	<div class="site-footer-widgets-wrapper py-4 py-lg-5">
+<footer id="colophon" class="site-footer bg-light">
+	<div class="site-footer-widgets-wrapper py-10 py-lg-18">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-lg-3 d-flex d-lg-block justify-content-center align-items-center flex-column pb-4 pb-lg-0">
+				<div class="col-lg-3 d-flex d-lg-block justify-content-center align-items-center flex-column pb-8 pb-lg-0">
 					<?php CheckBeforeTheme\Custom\Custom::FooterLogo(); ?>
 					<?php // CheckBeforeTheme\Custom\Custom::FooterSocialIcons(); ?>
 				</div>
 				<div class="col-lg-8">
-					<div class="row justify-content-center">
+					<div class="row justify-content-lg-center">
 						<?php
 						if ( has_nav_menu( 'footer-menu-1' ) ) :
 							?>
-							<div class="col-lg-4 pb-4 pb-lg-0">
-								<h3 class="footer-menu-title txt-cyan"><?php esc_html_e( 'Quick Links', 'check_before_theme' ); ?></h3>
+							<div class="col-12 col-sm-6 col-lg-4 pb-8 pb-lg-0">
+								<h3 class="footer-menu-title mb-8"><?php esc_html_e( 'Quick Links', 'check_before_theme' ); ?></h3>
 								<?php
 								wp_nav_menu(
 									array(
@@ -41,8 +41,8 @@
 						endif;
 						if ( has_nav_menu( 'footer-menu-2' ) ) :
 							?>
-							<div class="col-lg-4">
-								<h3 class="footer-menu-title txt-cyan"><?php esc_html_e( 'Connect with us', 'check_before_theme' ); ?></h3>
+							<div class="col-12 col-sm-6 col-lg-4 pb-8 pb-lg-0">
+								<h3 class="footer-menu-title mb-8"><?php esc_html_e( 'Connect with us', 'check_before_theme' ); ?></h3>
 								<?php
 								wp_nav_menu(
 									array(
@@ -58,8 +58,8 @@
 						endif;
 						if ( has_nav_menu( 'footer-menu-3' ) ) :
 							?>
-							<div class="col-lg-4">
-								<h3 class="footer-menu-title txt-cyan"><?php esc_html_e( 'Connect with us', 'check_before_theme' ); ?></h3>
+							<div class="col-12 col-sm-6 col-lg-4">
+								<h3 class="footer-menu-title mb-8"><?php esc_html_e( 'Connect with us', 'check_before_theme' ); ?></h3>
 								<?php
 								wp_nav_menu(
 									array(
@@ -79,23 +79,23 @@
 			</div>
 		</div>
 	</div>
-	<div class="site-info py-3 txt-white txt-center">
-		<div class="container">
+	<div class="site-info">
+		<div class="container border-top pt-6 pb-12">
 			<div class="row">
-				<div class="col-lg-6">
+				<div class="col-md-6 pb-6 d-flex justify-content-center justify-content-md-start">
 					<?php
 					/* translators: 1: Theme name, 2: Theme author. */
 					printf( esc_html__( '%1$s', 'check_before_theme' ), 'Copyright ' . date( 'Y' ) . ' CheckBefore' );
 					?>
 				</div>
-				<div class="col-lg-6">
+				<div class="col-md-6">
 					<?php
 					if ( has_nav_menu( 'footer-menu-4' ) ) :
 						wp_nav_menu(
 							array(
 								'theme_location'  => 'footer-menu-4',
 								'menu_id'         => 'footer-menu-4',
-								'menu_class'      => 'menu mb-0',
+								'menu_class'      => 'menu ps-0 mb-0',
 								'container_id'    => 'footer-menu-container',
 							)
 						);
