@@ -21,7 +21,7 @@ class Enqueue
 
 	public function preconnect_google_font()
 	{
-		$font_url = 'https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=Nunito:wght@400;500;700&display=swap';
+		$font_url = 'https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=Nunito:wght@400;500;600;700&display=swap';
 		$html = '<link rel="preconnect" href="https://fonts.googleapis.com">';
 		$html .= "\r\n";
     $html .= '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';

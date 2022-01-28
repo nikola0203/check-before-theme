@@ -1,0 +1,13 @@
+.section-home-features {
+  .home-features-wrapper {
+    .home-feture-content {
+      p {
+        @include font-size(15px);
+        font-weight: 600;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

@@ -603,9 +603,9 @@
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "page_type",
                 "operator": "==",
-                "value": "tmp-home.php"
+                "value": "front_page"
             }
         ]
     ],
@@ -618,5 +618,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1642973258
+    "modified": 1643390970
 }

@@ -1,0 +1,13 @@
+.section-home-cta {
+  .cta-content-wrapper {
+    min-height: 220px;
+    .cta-section-desc {
+      p {
+        font-weight: 600;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

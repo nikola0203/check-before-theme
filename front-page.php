@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Home
+ * Front Page template
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#front-page-display
  *
  * @package check_before_theme
  */
@@ -16,7 +16,7 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', 'home' );
+			get_template_part( 'template-parts/content', 'front-page' );
 
 		endwhile; // End of the loop.
 		?>

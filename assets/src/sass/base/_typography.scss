@@ -37,16 +37,16 @@ h6,
 	@include margin-bottom(30px);
 }
 
-body {
-	&:not(.single-post):not(.single-page) {
-		h2,
-		.h2 {
-			@include font-size(32px);
-		}
+// body {
+// 	&:not(.single-post):not(.single-page) {
+// 		h2,
+// 		.h2 {
+// 			@include font-size(32px);
+// 		}
 	
-		h3,
-		.h3 {
-			@include font-size(20px);
-		}
-	}
-}
+// 		h3,
+// 		.h3 {
+// 			@include font-size(20px);
+// 		}
+// 	}
+// }

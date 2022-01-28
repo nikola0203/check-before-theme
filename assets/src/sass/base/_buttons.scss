@@ -24,6 +24,18 @@
     // border: none;
   }
   
+  &.btn-white {
+    color: $secondary;
+    border: 1px solid $secondary;
+    background-color: $white;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $white;
+      background-color: $secondary;
+    }
+  }
+
   &.btn-cyan {
     background-color: $cyan;
     &:hover,
