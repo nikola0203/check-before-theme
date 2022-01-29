@@ -80,7 +80,7 @@
 		</div>
 	</div>
 	<div class="site-info">
-		<div class="container border-top pt-6 pb-12">
+		<div class="container border-top pt-6 pb-6">
 			<div class="row">
 				<div class="col-md-6 pb-6 d-flex justify-content-center justify-content-md-start">
 					<?php

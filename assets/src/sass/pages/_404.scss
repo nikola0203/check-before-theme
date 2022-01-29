@@ -1,5 +1,8 @@
 .error-404 {
-  svg {
-    fill: $primary;
+  .image-404 {
+    svg {
+      max-width: 100%;
+      fill: $primary;
+    }
   }
 }

@@ -31,7 +31,7 @@ $allowedHtml = array(
           <?php
           if ( !empty( $cta['button'] ) ) :
             ?>
-            <a href="<?php echo esc_url( $cta['button']['url'] ); ?>" target="<?php esc_attr_e( $cta['button']['target'] ); ?>" title="<?php esc_attr_e( $cta['button']['title'] ); ?>" class="btn btn-white"><?php esc_html_e( $cta['button']['title'] ); ?>&nbsp;<i class="fas fa-chevron-right"></i></a>
+            <a href="<?php echo esc_url( $cta['button']['url'] ); ?>" target="<?php esc_attr_e( $cta['button']['target'] ); ?>" title="<?php esc_attr_e( $cta['button']['title'] ); ?>" class="btn btn-white"><?php esc_html_e( $cta['button']['title'] ); ?>&nbsp;<span class="icon-btn"><?php echo arrow_right('#559e33'); ?></span></a>
             <?php
           endif;
           ?>

@@ -4,18 +4,21 @@
  *
  */
 
+use CheckBeforeTheme\Plugins\Acf;
+
 $steps       = get_field( 'steps_section' );
 $allowedHtml = array(
   'br' => array(),
 );
 ?>
-<section class="section-home-steps">
+<section class="section-home-steps relative">
   <div class="container">
     <?php
     if ( !empty( $steps['steps'] ) ) :
       ?>
       <div class="home-steps-wrapper">
         <?php
+        $count_steps = count( $steps['steps'] );
         foreach ( $steps['steps'] as $key => $step ) :
           $icon    = $step['icon'];
           $title   = $step['title'];
@@ -23,12 +26,17 @@ $allowedHtml = array(
           $image   = $step['image'];
           $classes = $key % 2 == 0 ? 'odd' : 'even';
           ?>
-          <div class="row">
-            <div class="col-lg-8">
-              <h3><?php esc_html_e( $title ); ?></h3>
-              <?php echo wp_kses_post( $desc ); ?>
+          <div class="row justify-content-between">
+            <div class="col-lg-6 d-flex flex-column justify-content-center mb-8 mb-lg-0 <?php echo $key % 2 == 0 ? 'order-lg-1' : 'order-lg-2'; ?>">
+              <h2 class="mb-6"><?php esc_html_e( $title ); ?></h2>
+              <div class="home-step-content">
+                <?php echo wp_kses_post( $desc ); ?>
+              </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-5 mb-8 mb-lg-0 <?php echo $key % 2 == 0 ? 'order-lg-2' : 'order-lg-1'; ?>">
+              <div class="home-step-image-wrapper">
+                <?php Acf::acfImage( $image, 'medium_large', '' ); ?>
+              </div>
             </div>
           </div>
           <?php
@@ -39,4 +47,5 @@ $allowedHtml = array(
     endif;
     ?>
   </div>
+  <div class="home-steps-triangle absolute w-100 bg-white"></div>
 </section>

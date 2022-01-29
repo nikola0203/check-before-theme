@@ -1,0 +1,38 @@
+.section-home-steps {
+  @include padding-top(40px);
+  @include padding-bottom(160px);
+  background-image: linear-gradient(to bottom, $white, $gray-100);
+  .home-steps-triangle {
+    height: 100px;
+    bottom: 0;
+    clip-path: polygon(100% 50%, 0% 100%, 100% 100%);
+  }
+  .home-step-content {
+    font-weight: 600;
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    .home-step-image-wrapper {
+      img {
+        display: block;
+        margin: 0 auto;
+        max-height: 300px;
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    .home-step-image-wrapper {
+      height: 400px;
+      img {
+        @include object-fit(contain);
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    @include padding-top(160px);
+  }
+}

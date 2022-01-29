@@ -48,7 +48,7 @@ $allowedHtml = array(
     if ( !empty( $faq_section['button'] ) ) :
       ?>
       <div class="hero-button text-center">
-        <a href="<?php echo esc_url( $faq_section['button']['url'] ); ?>" target="<?php esc_attr_e( $faq_section['button']['target'] ); ?>" title="<?php esc_attr_e( $faq_section['button']['title'] ); ?>" class="btn btn-white"><?php esc_html_e( $faq_section['button']['title'] ); ?>&nbsp;<i class="fas fa-arrow-right"></i></a>
+        <a href="<?php echo esc_url( $faq_section['button']['url'] ); ?>" target="<?php esc_attr_e( $faq_section['button']['target'] ); ?>" title="<?php esc_attr_e( $faq_section['button']['title'] ); ?>" class="btn btn-white"><?php esc_html_e( $faq_section['button']['title'] ); ?>&nbsp;<span class="icon-btn"><?php echo arrow_right('#559e33'); ?></span></a>
       </div>
       <?php
     endif;

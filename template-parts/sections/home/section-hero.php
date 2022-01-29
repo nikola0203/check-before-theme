@@ -30,7 +30,7 @@ $allowedHtml = array(
         endif;
         if ( !empty( $hero['button'] ) ) :
           ?>
-          <div class="hero-button mb-12 mb-lg-0">
+          <div class="hero-button mb-12 mb-xl-0">
             <a href="<?php echo esc_url( $hero['button']['url'] ); ?>" target="<?php esc_attr_e( $hero['button']['target'] ); ?>" title="<?php esc_attr_e( $hero['button']['title'] ); ?>" class="btn"><?php esc_html_e( $hero['button']['title'] ); ?>&nbsp;<span class="icon-btn"><?php echo arrow_right(); ?></span></a>
           </div>
           <?php
@@ -42,7 +42,7 @@ $allowedHtml = array(
         if ( !empty( $hero['content'] ) ) :
           ?>
           <div class="hero-image">
-            <?php Acf::acfImage( $hero['image'], 'medium_large', '' ); ?>
+            <?php Acf::acfImage( $hero['image'], 'medium_large', 'd-block mx-auto' ); ?>
           </div>
           <?php
         endif;

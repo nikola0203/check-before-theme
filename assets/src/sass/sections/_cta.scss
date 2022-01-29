@@ -9,5 +9,11 @@
         }
       }
     }
+    .btn.btn-white {
+      &:hover,
+      &:focus {
+        background-color: darken( $secondary, 10% );
+      }
+    }
   }
 }
