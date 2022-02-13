@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page content in content-home.php
+ * Template part for displaying page content in faq content.
  *
  */
 

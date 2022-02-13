@@ -6,7 +6,7 @@ form {
     width: 100%;
     transition: $transition-default;
     &:focus {
-      border: 2px solid $secondary;
+      border: 1px solid $secondary;
     }
   }
 }
@@ -22,11 +22,16 @@ optgroup,
 textarea {
   line-height: 1;
   @include padding(16px);
-  border: 2px solid $primary;
+  border: 1px solid $gray-200;
   border-radius: 1rem;
   &:focus {
     outline: none;
   }
+}
+
+input#number-of-users {
+  width: 100%;
+  max-width: 74px;
 }
 
 // Search form

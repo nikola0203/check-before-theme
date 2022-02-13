@@ -58,6 +58,10 @@ class Enqueue
 		// JS.
 		wp_enqueue_script( 'main', mix( 'js/app.js' ), array(), '1.0.0', true );
 
+		wp_localize_script('main', 'main_object', array(
+			'site_url' => get_site_url()
+		));
+
 		// Activate browser-sync on development environment
 		// if ( $_ENV['APP_ENV'] === 'development' ) :
 		// 	wp_enqueue_script( '__bs_script__', $_ENV['WP_SITEURL'] . ':3000/browser-sync/browser-sync-client.js', array(), null, true );

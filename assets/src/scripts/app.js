@@ -20,8 +20,10 @@ import 'lazysizes';
 import NavMenu from './modules/nav-menu.js';
 import Slider from './modules/slider.js';
 import Faq from './modules/faq.js';
+import PricingPackages from './modules/pricing-packages.js';
 
 // const app = new App();
 const nav_menu = new NavMenu();
 const slider = new Slider();
 const faq = new Faq();
+const pricing_packages = new PricingPackages();

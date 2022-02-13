@@ -8,6 +8,8 @@
 
 namespace CheckBeforeTheme;
 
+use WooCommerce;
+
 final class Init
 {
 	/**
@@ -33,6 +35,7 @@ final class Init
 			Plugins\Acf::class,
 			Plugins\ContactForm7::class,
 			Custom\Custom::class,
+			Woo\Woo::class,
 		]; 
 	}
 

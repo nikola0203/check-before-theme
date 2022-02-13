@@ -12,7 +12,7 @@ section.faq {
       @include transition( color $time $ease );
       &:hover,
       &.active {
-        color: $cyan;
+        color: $secondary;
       }
       // i {
         // transition: $transition-default;

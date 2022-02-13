@@ -1,0 +1,38 @@
+.section-pricing-packages {
+  .pricing-package-name {
+    @include font-size(20px);
+    color: $primary;
+  }
+  .pricing-package-price-block {
+    @include padding(30px 0);
+  }
+  .pricing-package-price {
+    font-size: 3rem;
+    .span-price {
+      display: none;
+      &.active {
+        display: inline;
+      }
+    }
+  }
+  .pricing-package-desc,
+  .pricing-list-desc {
+    color: $primary;
+  }
+  .featured-package-triangle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    background-color: $secondary;
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
+  }
+  @include media-breakpoint-down(lg) {
+    .pricing-package-name,
+    .pricing-package-price-block,
+    .pricing-package-checkmark {
+      border-left: 1px solid $gray-300;
+    }
+  }
+}
