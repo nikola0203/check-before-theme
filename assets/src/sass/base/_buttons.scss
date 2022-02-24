@@ -1,3 +1,7 @@
+button {
+  border: 0;
+}
+
 .btn {
   display: inline-flex;
   font-weight: 700;
@@ -145,6 +149,55 @@
           transform: rotate(45deg) translate(-7px,7px) scaleX(0.7);
         }
       }
+    }
+  }
+}
+
+.btn-group-pricing-plans {
+  button.btn {
+    &.active {
+      color: $white;
+      background-color: $secondary;
+    }
+  }
+  .btn-pricing-plan-monthly {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .btn-pricing-plan-annual {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.woocommerce,
+.woocommerce-page {
+  .woocommerce-error,
+  .woocommerce-info,
+  .woocommerce-message {
+    .button {
+      color: $white;
+      background-color: $secondary;
+      transition: $transition-default;
+      &:hover,
+      &:focus {
+        color: $white;
+        background-color: darken( $secondary, 10% );
+      }
+    }
+  }
+}
+
+.woocommerce {
+  #respond input#submit.alt,
+  a.button.alt,
+  button.button.alt,
+  input.button.alt {
+    background-color: $secondary;
+    transition: $transition-default;
+    &:hover,
+    &:focus {
+      background-color: darken( $secondary, 10% );
     }
   }
 }

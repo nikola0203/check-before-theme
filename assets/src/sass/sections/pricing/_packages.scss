@@ -13,6 +13,9 @@
       &.active {
         display: inline;
       }
+      small {
+        @include font-size(18px);
+      }
     }
   }
   .pricing-package-desc,

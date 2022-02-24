@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page content in page.php
+ * Template part for displaying page content in tmp-woo.php
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -18,11 +18,7 @@
     <?php //check_before_theme_post_thumbnail(); ?>
   
     <div class="entry-content">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <?php the_content(); ?>
-        </div>
-      </div>
+      <?php the_content(); ?>
     </div><!-- .entry-content -->
   </div>
 </article><!-- #post-<?php the_ID(); ?> -->

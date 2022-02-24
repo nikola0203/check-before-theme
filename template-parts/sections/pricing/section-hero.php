@@ -19,19 +19,20 @@ $allowedHtml = array(
     endif;
     if ( !empty( $hero['subtitle'] ) ) :
       ?>
-      <div class="d-flex justify-content-center align-items-center mb-10">
-        <h3 class="text-center mb-0"><?php echo wp_kses( $hero['subtitle'], $allowedHtml ); ?></h3>
-        <input type="number" value="0" name="number-of-users" id="number-of-users" class="ms-5">
+      <div class="d-flex justify-content-center flex-column flex-md-row align-items-center mb-10">
+        <h3 class="text-center mb-md-0"><?php echo wp_kses( $hero['subtitle'], $allowedHtml ); ?></h3>
+        <div class="d-flex justify-content-center align-items-start">
+          <input type="number" value="0" name="number-of-users" id="number-of-users" class="border ms-5">
+          <span data-bs-toggle="tooltip" data-bs-placement="top" title="Hooray!" class="number-of-users-tooltip d-flex justify-content-center align-items-center ms-1 mt-3 rounded-circle fw-bold">&quest;</span>
+        </div>
       </div>
       <?php
     endif;
     ?>
-    <div class="d-flex justify-content-center align-items-center mb-5">
-      <h3 class="text-center mb-0">Choose the pricing plans</h3>
-    </div>
+    <h4 class="text-center mb-5">Choose the pricing plans</h4>
     <div class="d-flex justify-content-center btn-group-pricing-plans btn-group-sm" role="group">
-      <button type="button" data-pricing_monthly="monthly" class="btn btn-pricing-plans btn-pricing-plan-monthly active">Monthly payment</button>
-      <button type="button" data-pricing_annual="annual" class="btn btn-pricing-plans btn-pricing-plan-annual">Annual payment</button>
+      <button type="button" data-pricing_monthly="monthly" class="btn btn-white border-end-0 btn-pricing-plans btn-pricing-plan-monthly active">Monthly payment</button>
+      <button type="button" data-pricing_annual="annual" class="btn btn-white border-start-0 btn-pricing-plans btn-pricing-plan-annual">Annual payment</button>
     </div>
   </div>
 </section>

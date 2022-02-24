@@ -5,9 +5,7 @@
 /**
  * Import libraries
  */
-// import 'bootstrap/js/dist/collapse';
-// import 'bootstrap/js/dist/dropdown';
-// import 'bootstrap';
+// import { Tooltip } from 'bootstrap';
 // Font Awesome
 // import '@fortawesome/fontawesome-free/js/all.min';
 // Lazy load library
@@ -21,9 +19,11 @@ import NavMenu from './modules/nav-menu.js';
 import Slider from './modules/slider.js';
 import Faq from './modules/faq.js';
 import PricingPackages from './modules/pricing-packages.js';
+import BsTooltip from './modules/bs-tooltip.js';
 
 // const app = new App();
 const nav_menu = new NavMenu();
 const slider = new Slider();
 const faq = new Faq();
 const pricing_packages = new PricingPackages();
+const bs_tooltip = new BsTooltip();

@@ -8,7 +8,7 @@ class Faq {
 	}
 
   faq(faq_section_class) {
-    if ( $(faq_section_class).length > 0 ) {
+    if ($(faq_section_class).length > 0) {
       $(faq_section_class).each(function(index, faq){
         $(faq).find('.faq__wrapper-answer').hide();
         $(faq).find('.faq__wrapper-question').on('click', function() {

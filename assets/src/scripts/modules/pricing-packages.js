@@ -119,7 +119,7 @@ class PricingPackages {
         $( '.pricing-package-checkmark-' + index ).css({ 'height': ( package_price_desc + 'px' ) });
       });
       
-      $( window ).resize(function() {
+      $(window).on('resize', function() {
         let package_name_height  = $(".pricing-package-name").innerHeight() + 2;
         let package_price_height = $(".pricing-package-price-block").innerHeight() + 1;
         

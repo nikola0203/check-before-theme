@@ -42,7 +42,7 @@
 // @import "~bootstrap/scss/close";
 // @import "~bootstrap/scss/toasts";
 // @import "~bootstrap/scss/modal";
-// @import "~bootstrap/scss/tooltip";
+@import "~bootstrap/scss/tooltip";
 // @import "~bootstrap/scss/popover";
 // @import "~bootstrap/scss/carousel";
 // @import "~bootstrap/scss/spinners";
@@ -95,6 +95,7 @@
 @import 'sections/steps';
 @import 'sections/pricing/hero';
 @import 'sections/pricing/packages';
+@import 'sections/why/hero';
 
 /*--------------------------------------------------------------
 # ACF layouts

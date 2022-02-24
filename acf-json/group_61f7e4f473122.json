@@ -274,6 +274,25 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "key": "field_6212420514b6f",
+                    "label": "Show Section",
+                    "name": "show_section",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
                     "key": "field_61f7e52f948c8",
                     "label": "Title",
                     "name": "title",
@@ -387,5 +406,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1644751520
+    "modified": 1645363736
 }
