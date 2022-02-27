@@ -11,7 +11,7 @@ $allowedHtml = array(
   'br' => array(),
 );
 ?>
-<section class="section-why-hero bg-light py-10 py-lg-18 mb-10 mb-lg-12">
+<section class="section-why-two-columns my-10 my-lg-18">
   <div class="container">
     <div class="row justify-content-center">
       <?php
@@ -22,14 +22,14 @@ $allowedHtml = array(
             <?php
             if ( !empty( $column['image'] ) ) :
               ?>
-              <div class="">
-                <?php Acf::acfImage( $column['image'], 'medium_large', '' ); ?>
+              <div class="why-two-columns-image mb-8">
+                <?php Acf::acfImage( $column['image'], 'medium_large', 'd-block mx-auto' ); ?>
               </div>
               <?php
             endif;
             if ( !empty( $column['title'] ) ) :
               ?>
-              <h3 class=""><?php echo wp_kses( $column['title'], $allowedHtml ); ?></h3>
+              <h3 class="mb-6"><?php echo wp_kses( $column['title'], $allowedHtml ); ?></h3>
               <?php
             endif;
             if ( !empty( $column['content'] ) ) :

@@ -1,0 +1,14 @@
+.section-content-image {
+  @include media-breakpoint-down(lg) {
+    .content-image-image {
+      img {
+        max-height: 360px;
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    .content-image-image {
+      height: 400px;
+    }
+  }
+}

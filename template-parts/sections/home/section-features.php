@@ -36,7 +36,7 @@ $allowedHtml = array(
               <div class="home-feture-img mb-6 mb-lg-8">
                 <?php Acf::acfImage( $icon, 'medium_large', '' ); ?>
               </div>
-              <h3 class="mb-5 mb-lg-6"><?php esc_html_e( $feature_title ); ?></h3>
+              <h4 class="mb-5 mb-lg-6"><?php esc_html_e( $feature_title ); ?></h4>
               <div class="home-feture-content">
                 <?php echo wp_kses_post( $description ); ?>
               </div>

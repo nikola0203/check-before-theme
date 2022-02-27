@@ -10,10 +10,10 @@ $allowedHtml = array(
   'br' => array(),
 );
 ?>
-<section class="section-why-hero bg-light py-10 py-lg-18 mb-10 mb-lg-12">
+<section class="section-content-icon my-8 mt-lg-18 mb-lg-12">
   <div class="container">
     <div class="row justify-content-between">
-      <div class="col-lg-8">
+      <div class="col-lg-8 order-2 order-lg-1">
         <?php
         if ( !empty( $args['title'] ) ) :
           ?>
@@ -22,18 +22,18 @@ $allowedHtml = array(
         endif;
         if ( !empty( $args['content'] ) ) :
           ?>
-          <div class="hero-content mb-8">
+          <div class="hero-content">
             <?php echo wp_kses_post( $args['content'] ); ?>
           </div>
           <?php
         endif;
         ?>
       </div>
-      <div class="col-lg-1">
+      <div class="col-lg-1 order-1 order-lg-2">
         <?php
         if ( !empty( $args['icon'] ) ) :
           ?>
-          <div class="home-feture-img mb-6 mb-lg-8">
+          <div class="content-icon-img mb-6 mb-lg-8">
             <?php Acf::acfImage( $args['icon'], 'medium_large', '' ); ?>
           </div>
           <?php

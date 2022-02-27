@@ -1,0 +1,17 @@
+.section-why-features-and-image {
+  .features-and-image-img-wrapper {
+    img {
+      max-height: 100%;
+    }
+  }
+  @media only screen and (max-width: 992px) and (min-width: 400px) {
+    .features-and-image-img-wrapper {
+      height: 400px;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    .features-and-image-img-wrapper {
+      height: 600px;
+    }
+  }
+}

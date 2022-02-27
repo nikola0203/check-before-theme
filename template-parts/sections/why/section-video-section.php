@@ -9,7 +9,7 @@ $allowedHtml   = array(
   'br' => array(),
 );
 ?>
-<section class="section-video-section bg-light py-10 py-lg-18 mb-10 mb-lg-12">
+<section class="section-video-section relative py-10 py-lg-18 mb-10 mb-lg-12">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">
@@ -36,4 +36,5 @@ $allowedHtml   = array(
       </div>
     </div>
   </div>
+  <div class="video-steps-triangle absolute w-100 bg-white"></div>
 </section>

@@ -96,6 +96,10 @@
 @import 'sections/pricing/hero';
 @import 'sections/pricing/packages';
 @import 'sections/why/hero';
+@import 'sections/why/video';
+@import 'sections/why/two-columns';
+@import 'sections/why/content-image';
+@import 'sections/why/features-image';
 
 /*--------------------------------------------------------------
 # ACF layouts
@@ -114,3 +118,9 @@
 # Pages
 --------------------------------------------------------------*/
 @import 'pages/404';
+
+/*--------------------------------------------------------------
+# WooCommerce
+--------------------------------------------------------------*/
+@import 'woocommerce/checkout';
+@import 'woocommerce/order-received';

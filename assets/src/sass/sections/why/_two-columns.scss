@@ -1,0 +1,17 @@
+.section-why-two-columns {
+  .why-two-columns-image {
+    img {
+      max-height: 100%;
+    }
+  }
+  @media only screen and (max-width: 767px) and (min-width: 400px) {
+    .why-two-columns-image {
+      height: 300px;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    .why-two-columns-image {
+      height: 400px;
+    }
+  }
+}

@@ -11,36 +11,43 @@ $allowedHtml = array(
   'br' => array(),
 );
 ?>
-<section class="section-why-hero bg-light py-10 py-lg-18 mb-10 mb-lg-12">
+<section class="section-why-features-and-image my-10 my-lg-18">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-6">
+    <div class="row justify-content-between align-items-center">
+      <div class="col-lg-5">
         <?php
         if ( !empty( $features['features'] ) ) :
-          foreach ( $features['features'] as $feature ) :
+          $count_features = count( $features['features'] );
+          foreach ( $features['features'] as $key => $feature ) :
             ?>
-            <div class="">
-              <?php
-              if ( !empty( $feature['icon'] ) ) :
-                ?>
-                <div class="">
-                  <?php Acf::acfImage( $feature['icon'], 'medium_large', '' ); ?>
-                </div>
+            <div class="row <?php echo ( $key != array_key_last( $features['features'] ) ) ? 'mb-6 mb-lg-12' : 'mb-6 mb-lg-0'; ?>">
+              <div class="col-12 col-md-2 mb-5 mb-md-0">
                 <?php
-              endif;
-              if ( !empty( $feature['title'] ) ) :
+                if ( !empty( $feature['icon'] ) ) :
+                  ?>
+                  <div class="">
+                    <?php Acf::acfImage( $feature['icon'], 'medium_large', '' ); ?>
+                  </div>
+                  <?php
+                endif;
                 ?>
-                <h3 class=""><?php echo wp_kses( $feature['title'], $allowedHtml ); ?></h3>
+              </div>
+              <div class="col-12 col-md-10">
                 <?php
-              endif;
-              if ( !empty( $feature['content'] ) ) :
+                if ( !empty( $feature['title'] ) ) :
+                  ?>
+                  <h4 class="mb-6"><?php echo wp_kses( $feature['title'], $allowedHtml ); ?></h4>
+                  <?php
+                endif;
+                if ( !empty( $feature['content'] ) ) :
+                  ?>
+                  <div class="">
+                    <?php echo wp_kses_post( $feature['content'] ); ?>
+                  </div>
+                  <?php
+                endif;
                 ?>
-                <div class="">
-                  <?php echo wp_kses_post( $feature['content'] ); ?>
-                </div>
-                <?php
-              endif;
-              ?>
+              </div>
             </div>
             <?php
           endforeach;
@@ -53,8 +60,8 @@ $allowedHtml = array(
         <?php
         if ( !empty( $features['image'] ) ) :
           ?>
-          <div class="">
-            <?php Acf::acfImage( $features['image'], 'medium_large', '' ); ?>
+          <div class="features-and-image-img-wrapper">
+            <?php Acf::acfImage( $features['image'], 'medium_large', 'object-fit-contain' ); ?>
           </div>
           <?php
         endif;

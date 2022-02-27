@@ -1,0 +1,22 @@
+li.woocommerce-order-overview__payment-method.method {
+  display: none;
+}
+
+ul.woocommerce-order-overview.woocommerce-thankyou-order-details,
+td.woocommerce-table__product-name.product-name ul.wc-item-meta {
+  padding-left: 0;
+}
+
+@include media-breakpoint-down(md) {
+  .woocommerce {
+    ul.order_details {
+      li {
+        float: none;
+        margin-right: 0;
+        padding-right: 0;
+        border-right: none;
+        margin-bottom: 1rem;
+      }
+    }
+  } 
+}

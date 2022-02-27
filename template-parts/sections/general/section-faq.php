@@ -31,7 +31,7 @@ if ( !empty( $faq_section['show_section'] ) ) :
                 $answer   = $faq['faq_answer'];
                 if ( $question ) :
                   ?>
-                  <h3 class="faq__wrapper-question d-flex justify-content-between align-items-center mb-0 border-top <?php esc_attr_e( ( 1 == get_row_index() ) ? ' border-top' : '' ); ?>"><?php esc_html_e( $question ); ?>&nbsp;<i class="fas fa-plus ps-3"></i></h3>
+                  <h4 class="faq__wrapper-question d-flex justify-content-between align-items-center mb-0 border-top <?php esc_attr_e( ( 1 == get_row_index() ) ? ' border-top' : '' ); ?>"><?php esc_html_e( $question ); ?>&nbsp;<i class="fas fa-plus ps-3"></i></h4>
                   <?php
                 endif;
                 if ( $answer ) : 

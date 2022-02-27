@@ -1,0 +1,13 @@
+.section-video-section {
+  @include padding-top(40px);
+  @include padding-bottom(160px);
+  background-image: linear-gradient(to bottom, $white, $gray-100);
+  @include media-breakpoint-up(lg) {
+    @include padding-top(160px);
+  }
+  .video-steps-triangle {
+    height: 100px;
+    bottom: 0;
+    clip-path: polygon(100% 50%, 0% 100%, 100% 100%);
+  }
+}

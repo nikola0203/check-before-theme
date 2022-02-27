@@ -2,10 +2,10 @@
 // swiper core styles
 import 'swiper/css'
 // modules styles
-import 'swiper/css/navigation'
+// import 'swiper/css/navigation'
 // import 'swiper/css/pagination'
 
-import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Autoplay } from 'swiper';
 
 class Slider {
 	constructor() {
@@ -13,32 +13,25 @@ class Slider {
 	}
 
 	init() {
-		this.testimonialSlider();
+		this.heroSlider();
 	}
 
-	testimonialSlider() {
-		$(".testimonials__slider").each(function(index, element){
-			$(this).addClass("testimonials__slider-" + index);
-			$(this).find(".swiper-button-prev").addClass("swiper-button-prev-" + index);
-			$(this).find(".swiper-button-next").addClass("swiper-button-next-" + index);
+	heroSlider() {
+		$(".slider-home-hero").each(function(index, element){
+			$(this).addClass("slider-home-hero-" + index);
 			
-			new Swiper(".testimonials__slider-" + index, {
-				modules: [Navigation, Pagination],
+			new Swiper(".slider-home-hero-" + index, {
+				modules: [Autoplay],
 				slidesPerView: 1,
 				spaceBetween: 60,
-				loop: true,
-				navigation: {
-					nextEl: ".swiper-button-next-" + index,
-					prevEl: ".swiper-button-prev-" + index,
+				speed: 1600,
+				autoplay: {
+					delay: 2500,
+					disableOnInteraction: false,
 				},
-				breakpoints: {
-					1140: {
-						slidesPerView: 2,
-						// spaceBetween: 60,
-					}
-				}
-			});
-		});
+				loop: true
+			})
+		})
 	}
 }
 

@@ -29,7 +29,6 @@ section.faq {
       // @include padding-top(16px);
       p {
         @include font-size(15px);
-        font-weight: 600;
         &:last-of-type {
           margin-bottom: 0;
         }

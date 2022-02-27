@@ -6,10 +6,12 @@
 		display: flex;
 	}
 	#primary-menu-container {
+		position: relative;
 		ul.menu,
 		ul.sub-menu {
 			list-style: none;
 			margin-bottom: 0;
+			z-index: 9;
 			li.menu-item {
 				margin-bottom: 0;
 				a {
@@ -27,7 +29,7 @@
 				}
 			}
 			li.menu-item-has-children {
-				position: relative;
+				// position: relative;
 				ul {
 					padding-left: 5px;
 				}
@@ -45,6 +47,7 @@
 				> ul.sub-menu {
 					li.menu-item {
 						a {
+							display: inline-flex;
 							@include padding(5px 0);
 						}
 					}
@@ -131,16 +134,17 @@
 				}
 				> li.menu-item-has-children {
 					> ul.sub-menu {
-						position: absolute;
-						left: 0;
-						top: 44px;
 						width: 100%;
-						min-width: 240px;
-						z-index: 1;
-						background: $white;
-						@include padding(10px 15px);
-						@include border-radius(15px);
-						border: 2px solid $primary;
+						position: absolute;
+						border-radius: 20px;
+						box-shadow: 0 3px 10px rgb( 0 0 0 / 30% );
+						grid-template-columns: repeat( 3, 1fr );
+						left: 0;
+						list-style-position: inside;
+						list-style-type: none;
+						margin-left: 0;
+						background-color: $white;
+						@include padding( 20px );
 					}
 				}
 			}

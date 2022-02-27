@@ -20,12 +20,6 @@ class Faq {
           } else {
             $(this).find('i').removeClass('fa-minus').addClass('fa-plus');
           }
-          // $(this).siblings('.faq__wrapper-question').removeClass('active');
-          // if ( $(this).hasClass('active') ) {
-          //   $(this).removeClass('active');
-          // } else {
-          //   $(this).addClass('active');
-          // }
         });
       });
     }

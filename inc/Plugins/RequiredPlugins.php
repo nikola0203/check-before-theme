@@ -49,11 +49,11 @@ class RequiredPlugins
         'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
       ),
 
-      array(
-        'name' 		=> 'Contact Form 7',
-        'slug' 		=> 'contact-form-7',
-        'required' 	=> true,
-      ),
+      // array(
+      //   'name' 		=> 'Contact Form 7',
+      //   'slug' 		=> 'contact-form-7',
+      //   'required' 	=> true,
+      // ),
 
       // This is an example of how to include a plugin from the WordPress Plugin Repository.
       // array(

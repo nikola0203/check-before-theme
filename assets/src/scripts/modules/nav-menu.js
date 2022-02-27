@@ -30,13 +30,11 @@ class NavMenu {
     if ( $(window).width() > 992 ) {
       $(".menu-item-has-children").each(function(index, element){
         $(this).hover(function(){
-          // console.log('entered');
           $(this).find('> a').stop(true, true).addClass('active');
-          $(this).find('> .sub-menu').stop(true, true).slideDown(200);
+          $(this).find('> .sub-menu').stop(true, true).css("display", "grid");
         }, function(){
-          // console.log('left');
           $(this).find('> a').stop(true, true).removeClass('active');
-          $(this).find('> .sub-menu').stop(true, true).slideUp(200);
+          $(this).find('> .sub-menu').stop(true, true).css("display", "none");
         });
       });
     }
