@@ -18,18 +18,21 @@ class Slider {
 
 	heroSlider() {
 		$(".slider-home-hero").each(function(index, element){
-			$(this).addClass("slider-home-hero-" + index);
+			$(this).addClass("slider-home-hero-" + index)
+
+			let speed = $(this).data('speed'),
+					autoplay_delay = $(this).data('autoplay_delay')
 			
 			new Swiper(".slider-home-hero-" + index, {
 				modules: [Autoplay],
 				slidesPerView: 1,
 				spaceBetween: 60,
-				speed: 1600,
+				loop: true,
+				speed: speed,
 				autoplay: {
-					delay: 2500,
+					delay: autoplay_delay,
 					disableOnInteraction: false,
 				},
-				loop: true
 			})
 		})
 	}

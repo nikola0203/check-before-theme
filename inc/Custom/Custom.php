@@ -53,6 +53,15 @@ class Custom
     echo wp_kses_post( $list );
   }
 
+  public static function FooterCopy()
+  {
+    $footer_settings  = get_field( 'footer_settings', 'option' );
+    $footer_copyright = $footer_settings['footer_copyright'];
+    if ( !empty( $footer_copyright ) ) {
+      echo wp_kses_post( $footer_copyright );
+    }
+  }
+
   /**
 	 * Custom get excerpt
 	 *

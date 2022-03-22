@@ -16,7 +16,7 @@ class Enqueue
 	{
 		add_action( 'wp_head', array( $this, 'preconnect_google_font' ), 5 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
+		// add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
   }
 
 	public function preconnect_google_font()
@@ -44,7 +44,7 @@ class Enqueue
 	public function enqueue_scripts() 
 	{
 		// Deregister the built-in version of jQuery from WordPress.
-		if ( ! is_customize_preview() ) {
+		if ( ! is_customize_preview() && ! is_woocommerce() && ! is_cart() && ! is_checkout() ) {
 			wp_deregister_script( 'jquery' );
 		}
 
@@ -53,13 +53,13 @@ class Enqueue
 		wp_enqueue_style( 'check_before_theme', get_stylesheet_uri(), array( 'main' ), '1.0.0' );
 
 		// Admin options page CSS.
-		wp_add_inline_style( 'main', getOptionCss( 'check_before_theme_admin_custom_css' ) );
+		// wp_add_inline_style( 'main', getOptionCss( 'check_before_theme_admin_custom_css' ) );
 
 		// JS.
 		wp_enqueue_script( 'main', mix( 'js/app.js' ), array(), '1.0.0', true );
 
-		wp_localize_script('main', 'main_object', array(
-			'site_url' => get_site_url()
+		wp_localize_script( 'main', 'main_object', array(
+			'site_url' => get_site_url() 
 		));
 
 		// Activate browser-sync on development environment

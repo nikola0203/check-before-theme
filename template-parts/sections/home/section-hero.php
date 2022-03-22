@@ -6,8 +6,10 @@
 
 use CheckBeforeTheme\Plugins\Acf;
 
-$hero        = get_field( 'hero_section' );
-$allowedHtml = array(
+$hero           = get_field( 'hero_section' );
+$slider_speed   = get_field( 'speed' );
+$autoplay_delay = get_field( 'autoplay_delay' );
+$allowedHtml    = array(
   'br' => array(),
 );
 ?>
@@ -15,7 +17,7 @@ $allowedHtml = array(
   <?php
   if ( $hero['hero_slider'] ) :
     ?>
-    <div class="swiper slider-home-hero">
+    <div class="swiper slider-home-hero" data-speed="<?php esc_attr_e( $hero['speed'] ); ?>" data-autoplay_delay="<?php esc_attr_e( $hero['autoplay_delay'] ); ?>">
       <div class="swiper-wrapper">
         <?php
         foreach ( $hero['hero_slider'] as $slider_key => $hero_slider ) :

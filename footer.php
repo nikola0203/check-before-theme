@@ -25,14 +25,14 @@
 						if ( has_nav_menu( 'footer-menu-1' ) ) :
 							?>
 							<div class="col-12 col-sm-6 col-lg-4 pb-8 pb-lg-0">
-								<h3 class="footer-menu-title mb-8"><?php esc_html_e( 'Quick Links', 'check_before_theme' ); ?></h3>
+								<h3 class="footer-menu-title mb-8"><?php esc_html_e( wp_get_nav_menu_name( 'footer-menu-1' ) ); ?></h3>
 								<?php
 								wp_nav_menu(
 									array(
-										'theme_location'  => 'footer-menu-1',
-										'menu_id'         => 'footer-menu-1',
-										'menu_class'      => 'menu mb-0',
-										'container_id'    => 'footer-menu-container',
+										'theme_location' => 'footer-menu-1',
+										'menu_id'        => 'footer-menu-1',
+										'menu_class'     => 'menu mb-0',
+										'container_id'   => 'footer-menu-container',
 									)
 								);
 								?>
@@ -42,14 +42,14 @@
 						if ( has_nav_menu( 'footer-menu-2' ) ) :
 							?>
 							<div class="col-12 col-sm-6 col-lg-4 pb-8 pb-lg-0">
-								<h3 class="footer-menu-title mb-8"><?php esc_html_e( 'Connect with us', 'check_before_theme' ); ?></h3>
+								<h3 class="footer-menu-title mb-8"><?php esc_html_e( wp_get_nav_menu_name( 'footer-menu-2' ) ); ?></h3>
 								<?php
 								wp_nav_menu(
 									array(
-										'theme_location'  => 'footer-menu-2',
-										'menu_id'         => 'footer-menu-2',
-										'menu_class'      => 'menu mb-0',
-										'container_id'    => 'footer-menu-container',
+										'theme_location' => 'footer-menu-2',
+										'menu_id'        => 'footer-menu-2',
+										'menu_class'     => 'menu mb-0',
+										'container_id'   => 'footer-menu-container',
 									)
 								);
 								?>
@@ -59,14 +59,14 @@
 						if ( has_nav_menu( 'footer-menu-3' ) ) :
 							?>
 							<div class="col-12 col-sm-6 col-lg-4">
-								<h3 class="footer-menu-title mb-8"><?php esc_html_e( 'Connect with us', 'check_before_theme' ); ?></h3>
+								<h3 class="footer-menu-title mb-8"><?php esc_html_e( wp_get_nav_menu_name( 'footer-menu-3' ) ); ?></h3>
 								<?php
 								wp_nav_menu(
 									array(
-										'theme_location'  => 'footer-menu-3',
-										'menu_id'         => 'footer-menu-3',
-										'menu_class'      => 'menu mb-0',
-										'container_id'    => 'footer-menu-container',
+										'theme_location' => 'footer-menu-3',
+										'menu_id'        => 'footer-menu-3',
+										'menu_class'     => 'menu mb-0',
+										'container_id'   => 'footer-menu-container',
 									)
 								);
 								?>
@@ -83,20 +83,17 @@
 		<div class="container border-top pt-6 pb-6">
 			<div class="row">
 				<div class="col-md-6 pb-6 d-flex justify-content-center justify-content-md-start">
-					<?php
-					/* translators: 1: Theme name, 2: Theme author. */
-					printf( esc_html__( '%1$s', 'check_before_theme' ), 'Copyright ' . date( 'Y' ) . ' CheckBefore' );
-					?>
+					<?php CheckBeforeTheme\Custom\Custom::FooterCopy(); ?>
 				</div>
 				<div class="col-md-6">
 					<?php
 					if ( has_nav_menu( 'footer-menu-4' ) ) :
 						wp_nav_menu(
 							array(
-								'theme_location'  => 'footer-menu-4',
-								'menu_id'         => 'footer-menu-4',
-								'menu_class'      => 'menu ps-0 mb-0',
-								'container_id'    => 'footer-menu-container',
+								'theme_location' => 'footer-menu-4',
+								'menu_id'        => 'footer-menu-4',
+								'menu_class'     => 'menu ps-0 mb-0 text-center',
+								'container_id'   => 'footer-menu-container',
 							)
 						);
 					endif;
