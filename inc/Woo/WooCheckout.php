@@ -21,6 +21,8 @@ class WooCheckout
     add_filter( 'wc_add_to_cart_message_html', array( $this, 'remove_add_to_cart_message' ), 10, 1 );
     add_action( 'woocommerce_admin_order_data_after_order_details', array( $this, 'display_order_data_in_admin' ), 10, 1 );
     add_action( 'template_redirect', array( $this, 'woo_pages_redirect' ) );
+    add_action( 'woocommerce_review_order_before_submit', array( $this, 'add_checkout_privacy_policy' ), 9 );
+    add_action( 'woocommerce_checkout_process', array( $this, 'not_approved_privacy' ) );
   }
 
   /**
@@ -29,7 +31,8 @@ class WooCheckout
    * @param string $url
    * @return url
    */
-  public function woo_pages_redirect( $url ) {
+  public function woo_pages_redirect( $url )
+  {
     if ( is_shop() || is_product_category() || is_product_tag() || is_product() || is_cart() || is_account_page() ) {
       wp_redirect( home_url() );
       exit();
@@ -42,7 +45,8 @@ class WooCheckout
    * @param object $checkout
    * @return void
    */
-  public function custom_checkout_fields( $checkout ) {
+  public function custom_checkout_fields( $checkout )
+  {
     woocommerce_form_field(
       'billing_abn',
       array(
@@ -131,7 +135,8 @@ class WooCheckout
    * @param string $message
    * @return string
    */
-  public function remove_add_to_cart_message( $message ){
+  public function remove_add_to_cart_message( $message )
+  {
     return '';
   }
 
@@ -171,5 +176,37 @@ class WooCheckout
       </div>
     </div>
     <?php
+  }
+
+  /**
+   * Privacy policy input.
+   *
+   * @return input
+   */  
+  public function add_checkout_privacy_policy()
+  {
+    woocommerce_form_field(
+      'privacy_policy',
+      array(
+        'type'        => 'checkbox',
+        'class'       => array( 'form-row privacy' ),
+        'label_class' => array( 'woocommerce-form__label woocommerce-form__label-for-checkbox checkbox' ),
+        'input_class' => array( 'woocommerce-form__input woocommerce-form__input-checkbox input-checkbox' ),
+        'required'    => true,
+        'label'       => wc_replace_policy_page_link_placeholders( wc_get_privacy_policy_text( 'checkout' ) ),
+      )
+    ); 
+  }
+   
+  /**
+   * Show notice if customer does not tick.
+   *
+   * @return void
+   */
+  public function not_approved_privacy()
+  {
+    if ( ! (int) isset( $_POST['privacy_policy'] ) ) {
+      wc_add_notice( __( 'Please read and accept the <strong>privacy policy</strong> to proceed with your order.' ), 'error' );
+    }
   }
 }

@@ -1,4 +1,13 @@
 tr.woocommerce-shipping-totals,
-ul.wc_payment_methods {
+ul.wc_payment_methods,
+.woocommerce-privacy-policy-text {
   display: none;
+}
+
+.woocommerce-terms-and-conditions-link,
+.woocommerce-privacy-policy-link {
+  &:hover,
+  &:focus {
+    color: $secondary;
+  }
 }
