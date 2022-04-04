@@ -6,6 +6,22 @@
  * @package check_before_theme
  */
 
+if ( ! function_exists( 'print_var' ) ) {
+	/**
+	 * Var_dump and die method
+	 *
+	 * @return void
+	 */
+	function print_var() {
+		echo '<pre>';
+		array_map( function( $x ) {
+			var_dump( $x );
+		}, func_get_args() );
+		echo '</pre>';
+		die;
+	}
+}
+
 if ( ! function_exists( 'dd' ) ) {
 	/**
 	 * Var_dump and die method

@@ -16,7 +16,7 @@ class PricingPackages {
     let num_of_users = sessionStorage.getItem('num_of_users')
 
     if ( !num_of_users ) {
-      sessionStorage.setItem('num_of_users', 1)
+      sessionStorage.setItem('num_of_users', 15)
     }
 
     this.loopTroughPriceInputAndUpdate(".pricing-package-price input", num_of_users)

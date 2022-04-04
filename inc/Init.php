@@ -35,6 +35,7 @@ final class Init
 			Plugins\Acf::class,
 			Plugins\ContactForm7::class,
 			Custom\Custom::class,
+			Custom\Filters::class,
 			Woo\Woo::class,
 		]; 
 	}

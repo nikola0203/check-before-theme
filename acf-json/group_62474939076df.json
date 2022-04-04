@@ -1,89 +1,12 @@
 {
-    "key": "group_6144a6de35215",
-    "title": "[Options Page] Theme Settings",
+    "key": "group_62474939076df",
+    "title": "[Single] Pages",
     "fields": [
         {
-            "key": "field_6241ff9f31dd7",
-            "label": "Footer Settings",
-            "name": "",
-            "type": "accordion",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "open": 0,
-            "multi_expand": 0,
-            "endpoint": 0
-        },
-        {
-            "key": "field_6144a7a1d4dde",
-            "label": "Footer Settings",
-            "name": "footer_settings",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_6144a77de921e",
-                    "label": "Footer Logo",
-                    "name": "footer_logo",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_6235b082dc5eb",
-                    "label": "Footer Copyright",
-                    "name": "footer_copyright",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "text",
-                    "media_upload": 0,
-                    "toolbar": "full",
-                    "delay": 0
-                }
-            ]
-        },
-        {
-            "key": "field_6241ffa731dd8",
+            "key": "field_62474945f1c27",
             "label": "CTA Section",
             "name": "",
-            "type": "accordion",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -92,18 +15,76 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
-            "multi_expand": 0,
+            "placement": "top",
             "endpoint": 0
         },
         {
-            "key": "field_6241ffcd31dd9",
+            "key": "field_62474962f1c28",
+            "label": "Show CTA Section",
+            "name": "show_cta_section",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_62474c461778d",
+            "label": "Show Global CTA Section",
+            "name": "show_global_cta_section",
+            "type": "true_false",
+            "instructions": "Content of the section defined <a href=\"\/wp-admin\/admin.php?page=check_before_theme-general-settings\">here<\/a> or disable this button for custom content.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62474962f1c28",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_62474c951778e",
             "label": "CTA Section",
             "name": "cta_section",
             "type": "group",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62474962f1c28",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_62474c461778d",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -112,7 +93,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_6241ffdd31dda",
+                    "key": "field_62474cb81778f",
                     "label": "Title",
                     "name": "title",
                     "type": "text",
@@ -131,7 +112,7 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_6241ffe531ddb",
+                    "key": "field_62474cc017790",
                     "label": "Description",
                     "name": "description",
                     "type": "wysiwyg",
@@ -150,7 +131,7 @@
                     "delay": 0
                 },
                 {
-                    "key": "field_6241fff331ddc",
+                    "key": "field_62474cd217791",
                     "label": "Button",
                     "name": "button",
                     "type": "link",
@@ -170,9 +151,34 @@
     "location": [
         [
             {
-                "param": "options_page",
+                "param": "post_type",
                 "operator": "==",
-                "value": "check_before_theme-general-settings"
+                "value": "page"
+            },
+            {
+                "param": "page_type",
+                "operator": "!=",
+                "value": "front_page"
+            },
+            {
+                "param": "page_type",
+                "operator": "!=",
+                "value": "posts_page"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "tmp-pricing.php"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "tmp-why.php"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "tmp-woo.php"
             }
         ]
     ],
@@ -185,5 +191,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1648492538
+    "modified": 1648841008
 }

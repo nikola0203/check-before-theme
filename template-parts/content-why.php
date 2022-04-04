@@ -15,4 +15,11 @@ get_template_part( 'template-parts/sections/why/section', 'video-section' );
 get_template_part( 'template-parts/sections/why/section', 'content-icon', get_field( 'content_icon_right_second' ) );
 get_template_part( 'template-parts/sections/why/section', 'two-columns' );
 get_template_part( 'template-parts/sections/why/section', 'features-and-image' );
-get_template_part( 'template-parts/sections/home/section', 'cta' );
+if ( get_field( 'show_global_cta_section' ) ) :
+  $cta_section = get_field( 'cta_section', 'option' );
+else :
+  $cta_section = get_field( 'cta_section' );
+endif;
+if ( ! empty( $cta_section ) ) :
+  get_template_part( 'template-parts/sections/general/section', 'cta', $cta_section );
+endif;

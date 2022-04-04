@@ -8,3 +8,14 @@ a {
 		text-decoration: none;
 	}
 }
+
+.link-view-all-posts {
+	@include margin-bottom(30px);
+	&:hover,
+	&:focus {
+		color: $secondary;
+	}
+	i {
+		font-size: 13px;
+	}
+}

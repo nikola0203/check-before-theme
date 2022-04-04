@@ -22,7 +22,7 @@ $allowedHtml = array(
       <div class="d-flex justify-content-center flex-column flex-md-row align-items-center mb-10">
         <h4 class="text-center mb-md-0"><?php echo wp_kses( $hero['subtitle'], $allowedHtml ); ?></h4>
         <div class="d-flex justify-content-center align-items-start">
-          <input type="number" min="1" value="1" name="number-of-users" id="number-of-users" class="border ms-5">
+          <input type="number" min="1" value="15" name="number-of-users" id="number-of-users" class="border ms-5">
           <span data-bs-toggle="tooltip" data-bs-placement="top" title="Enter the number of users (prices will change accordingly)" class="number-of-users-tooltip d-flex justify-content-center align-items-center ms-1 mt-3 rounded-circle fw-bold">&quest;</span>
         </div>
       </div>
@@ -30,7 +30,13 @@ $allowedHtml = array(
     endif;
     ?>
     <div class="pricing-plans-wrapper">
-      <h4 class="text-center mb-5">Choose the pricing plans</h4>
+      <?php
+      if ( $hero['text_before_buttons'] ) :
+        ?>
+        <h4 class="text-center mb-5"><?php esc_html_e( $hero['text_before_buttons'] ); ?></h4>
+        <?php
+      endif;
+      ?>
       <div class="d-flex justify-content-center btn-group-pricing-plans btn-group-sm" role="group">
         <button type="button" data-pricing_monthly="monthly" class="btn btn-white border-end-0 btn-pricing-plans btn-pricing-plan-monthly active">Monthly payment</button>
         <button type="button" data-pricing_annual="annual" class="btn btn-white border-start-0 btn-pricing-plans btn-pricing-plan-annual">Annual payment</button>
