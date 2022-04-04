@@ -23,6 +23,8 @@ class WooCheckout
     add_action( 'template_redirect', array( $this, 'woo_pages_redirect' ) );
     add_action( 'woocommerce_review_order_before_submit', array( $this, 'add_checkout_privacy_policy' ), 9 );
     add_action( 'woocommerce_checkout_process', array( $this, 'not_approved_privacy' ) );
+    add_filter( 'woocommerce_default_address_fields' , array( $this, 'override_billing_checkout_fields' ), 10, 1 );
+    add_filter( 'woocommerce_thankyou_order_received_text' , array( $this, 'change_thankyou_order_received_text' ), 10, 2 );
   }
 
   /**
@@ -208,5 +210,19 @@ class WooCheckout
     if ( ! (int) isset( $_POST['privacy_policy'] ) ) {
       wc_add_notice( __( 'Please read and accept the <strong>privacy policy</strong> to proceed with your order.' ), 'error' );
     }
+  }
+
+  public function override_billing_checkout_fields( $fields )
+  {
+    $fields['address_1']['placeholder'] = 'Address line 1';
+    $fields['address_2']['placeholder'] = 'Address line 2 (optional)';
+    return $fields;
+  }
+
+  public function change_thankyou_order_received_text( $text, $order )
+  {
+    $text = __( '<h2 class="h5 mb-10 text-center">Thank you. Your order has been received. Our team will be in contact shortly.</h2>', 'woocommerce' );
+    
+    return $text;
   }
 }

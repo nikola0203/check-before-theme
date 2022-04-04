@@ -10,10 +10,10 @@ $allowedHtml    = array(
 );
 if ( ! empty( $after_packages ) ) :
   ?>
-  <section class="section-after-packages my-10 my-lg-18">
+  <section class="section-after-packages mb-10 mb-lg-18">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-lg-10">
+        <div class="col">
           <?php echo wp_kses_post( $after_packages['content_after_packages'] ); ?>
         </div>
       </div>

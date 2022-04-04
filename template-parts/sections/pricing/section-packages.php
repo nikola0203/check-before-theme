@@ -10,7 +10,7 @@ $allowedHtml = array(
 );
 
 ?>
-<section class="section-pricing-packages pb-6 pb-lg-12 mb-6 mb-lg-12">
+<section class="section-pricing-packages pb-4 pb-lg-8">
   <div class="container">
     <?php
     if ( !empty( $packages['packages'] ) ) :
@@ -18,7 +18,7 @@ $allowedHtml = array(
       $length = count( $packages['packages'] );
       ?>
       <div class="section-pricing-packages-wrapper">
-        <div class="row px-5">
+        <div class="row">
           <?php
           foreach ( $packages['packages'] as $key => $package ) :
             $product_id          = $package['select_product'];
