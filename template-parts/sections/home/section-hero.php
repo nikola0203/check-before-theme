@@ -50,10 +50,10 @@ $allowedHtml    = array(
                 </div>
                 <div class="col-lg-6">
                   <?php
-                  if ( !empty( $hero_slider['content'] ) ) :
+                  if ( !empty( $hero_slider['image'] ) ) :
                     ?>
                     <div class="hero-image">
-                      <?php Acf::acfImage( $hero_slider['image'], 'medium_large', 'd-block mx-auto' ); ?>
+                      <img src="<?php echo esc_url( $hero_slider['image']['sizes']['medium_large'] ); ?>" alt="<?php esc_attr_e( $hero_slider['image']['alt'] ); ?>" class="d-block mx-auto">
                     </div>
                     <?php
                   endif;

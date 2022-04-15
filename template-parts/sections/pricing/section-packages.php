@@ -39,8 +39,7 @@ $allowedHtml = array(
             $count_1             = 1;
             $count_2             = 1;
             $pkg_length          = count( $package['features'] );
-            ?>
-            <?php
+
             if ( 0 == $key ) :
               ?>
               <div class="col d-none d-lg-flex flex-column px-0 border-end">
@@ -81,24 +80,33 @@ $allowedHtml = array(
                         $num_of_users     = $single_variation->get_variation_attributes()['attribute_pa_number-of-users'];
                         $payment_type     = $single_variation->get_variation_attributes()['attribute_pa_payment-type'];
                         $variation_price  = $single_variation->get_price();
-                        ?>
-                        <input type="hidden" class="variation-price" name="<?php echo ( 'month' == $payment_type ) ? 'variation-price-month' : 'variation-price-annual'; ?>" data-num_of_users="<?php esc_attr_e( $num_of_users ); ?>" data-payment_type="<?php esc_attr_e( $payment_type ); ?>" data-variation_id="<?php esc_attr_e( $variation_id ); ?>" value="<?php esc_attr_e( $variation_price ) ?>">
-                        <?php
+
+                        if ( 'annual' == $payment_type ) {
+                          $variation_price = round( (float) $variation_price / 12, 2 );
+                          ?>
+                          <input type="hidden" class="variation-price" name="variation-price-annual" data-num_of_users="<?php esc_attr_e( $num_of_users ); ?>" data-payment_type="<?php esc_attr_e( $payment_type ); ?>" data-variation_id="<?php esc_attr_e( $variation_id ); ?>" value="<?php esc_attr_e( $variation_price ) ?>">
+                          <?php
+                        }
+                        if ( 'month' == $payment_type ) {
+                          ?>
+                          <input type="hidden" class="variation-price" name="variation-price-month" data-num_of_users="<?php esc_attr_e( $num_of_users ); ?>" data-payment_type="<?php esc_attr_e( $payment_type ); ?>" data-variation_id="<?php esc_attr_e( $variation_id ); ?>" value="<?php esc_attr_e( $variation_price ) ?>">
+                          <?php
+                        }
                       }
                     }
                     ?>
                     <?php
                     if ( $month_price && 'up-to-15-users' == $num_of_users_month && 'month' == $payment_type_month ) :
                       ?>
-                      <span class="span-price span-price-month active">
+                      <span class="span-price span-price-month">
                         <span class="currency"><?php esc_html_e( get_woocommerce_currency_symbol() ); ?></span><span data-variation_id="<?php esc_attr_e( $variations[0] ); ?>" class="price"><?php esc_html_e( $month_price ); ?></span><small>/month</small>
                       </span>
                       <?php
                     endif;
                     if ( $annual_price && 'up-to-15-users' == $num_of_users_annual && 'annual' == $payment_type_annual ) :
                       ?>
-                      <span class="span-price span-price-annual">
-                        <span class="currency"><?php esc_html_e( get_woocommerce_currency_symbol() ); ?></span><span data-variation_id="<?php esc_attr_e( $variations[1] ); ?>" class="price"><?php esc_html_e( $annual_price ); ?></span><small>/annual</small>  
+                      <span class="span-price span-price-annual active">
+                        <span class="currency"><?php esc_html_e( get_woocommerce_currency_symbol() ); ?></span><span data-variation_id="<?php esc_attr_e( $variations[1] ); ?>" class="price"><?php esc_html_e( $annual_price ); ?></span><small>/month</small>  
                       <?php
                     endif;
                     ?>
@@ -108,10 +116,13 @@ $allowedHtml = array(
                     <?php
                     if ( !empty( $variations ) ) :
                       ?>
-                      <a href="<?php echo esc_url( site_url( '/checkout/?add-to-cart=' . $variations[0] . '&quantity=1' ) ); ?>" target="<?php esc_attr_e( $button['target'] ); ?>" title="<?php esc_attr_e( $button['title'] ); ?>" class="btn btn-get-started"><?php esc_html_e( $button['title'] ); ?></a>
+                      <a href="<?php echo esc_url( site_url( '/checkout/?add-to-cart=' . $variations[0] . '&quantity=1' ) ); ?>" target="<?php esc_attr_e( $button['target'] ); ?>" title="<?php esc_attr_e( $button['title'] ); ?>" class="btn btn-get-started mb-3"><?php esc_html_e( $button['title'] ); ?></a>
                       <?php
                     endif;
                     ?>
+                    <div class="info-billed-annually active">
+                      <small>Billed annually for <strong><?php esc_html_e( get_woocommerce_currency_symbol() ); ?><span class="info-billed-annually-price"><?php esc_html_e( $annual_price ); ?></span></strong></small>
+                    </div>
                   </div>
                 </div>
                 <div class="<?php echo ( $x != $length ) ? '' : ''; ?>">

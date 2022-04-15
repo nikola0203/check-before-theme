@@ -38,8 +38,8 @@ $allowedHtml = array(
       endif;
       ?>
       <div class="d-flex justify-content-center btn-group-pricing-plans btn-group-sm" role="group">
-        <button type="button" data-pricing_monthly="monthly" class="btn btn-white border-end-0 btn-pricing-plans btn-pricing-plan-monthly active">Monthly payment</button>
-        <button type="button" data-pricing_annual="annual" class="btn btn-white border-start-0 btn-pricing-plans btn-pricing-plan-annual">Annual payment</button>
+        <button type="button" data-pricing_monthly="monthly" class="btn btn-white border-end-0 btn-pricing-plans btn-pricing-plan-monthly">Monthly payment</button>
+        <button type="button" data-pricing_annual="annual" class="btn btn-white border-start-0 btn-pricing-plans btn-pricing-plan-annual active">Annual payment</button>
       </div>
     </div>
     <div class="section-contact-us-form text-center">

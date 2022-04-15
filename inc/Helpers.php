@@ -12,13 +12,10 @@ if ( ! function_exists( 'print_var' ) ) {
 	 *
 	 * @return void
 	 */
-	function print_var() {
+	function print_var($x) {
 		echo '<pre>';
-		array_map( function( $x ) {
-			var_dump( $x );
-		}, func_get_args() );
+		print_r($x);
 		echo '</pre>';
-		die;
 	}
 }
 

@@ -28,6 +28,12 @@
   .pricing-list-desc {
     color: $primary;
   }
+  .info-billed-annually {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
   .featured-package-triangle {
     position: absolute;
     right: 0;
