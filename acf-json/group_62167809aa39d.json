@@ -831,13 +831,40 @@
             "endpoint": 0
         },
         {
+            "key": "field_624751846ecbd",
+            "label": "Show Global CTA Section",
+            "name": "show_global_cta_section",
+            "type": "true_false",
+            "instructions": "Content of the section defined <a href=\"\/wp-admin\/admin.php?page=check_before_theme-general-settings\">here<\/a> or disable this button for custom content.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_62167fbb196e7",
             "label": "CTA Section",
             "name": "cta_section",
             "type": "group",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_624751846ecbd",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -919,5 +946,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1645708638
+    "modified": 1648841134
 }

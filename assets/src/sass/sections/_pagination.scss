@@ -2,23 +2,31 @@ nav.navigation.pagination {
   display: flex;
   justify-content: center;
   align-items: center;
-  @include padding-top(40px);
-  @include padding-bottom(40px);
+  @include margin-top(40px);
+  @include margin-bottom(80px);
   .nav-links {
     display: flex;
   }
   .page-numbers {
-    @include font-size(18px);
-    @include padding(8px 18px);
-    margin-left: 4px;
-    margin-right: 4px;
-    border: 2px solid $primary;
+    @include padding(4px 14px);
+    margin-left: 1px;
+    margin-right: 1px;
+    border: 1px solid $gray-200;
     border-radius: 6px;
+    transition: $transition-default;
     &:hover,
     &:focus,
     &.current {
-      color: $primary;
-      background-color: $cyan;
+      color: $black;
+      background-color: $gray-100;
+    }
+  }
+  @include media-breakpoint-up(sm) {
+    .page-numbers {
+      @include font-size(18px);
+      @include padding(8px 18px);
+      margin-left: 4px;
+      margin-right: 4px;
     }
   }
 }

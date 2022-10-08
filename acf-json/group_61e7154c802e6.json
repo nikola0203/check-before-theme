@@ -34,6 +34,48 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "key": "field_6235b51c38f60",
+                    "label": "Speed",
+                    "name": "speed",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                },
+                {
+                    "key": "field_6235b53138f61",
+                    "label": "Autoplay Delay",
+                    "name": "autoplay_delay",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                },
+                {
                     "key": "field_621bb190ab0d2",
                     "label": "Hero Slider",
                     "name": "hero_slider",
@@ -570,13 +612,40 @@
             "endpoint": 0
         },
         {
+            "key": "field_62474fe9505a4",
+            "label": "Show Global CTA Section",
+            "name": "show_global_cta_section",
+            "type": "true_false",
+            "instructions": "Content of the section defined <a href=\"\/wp-admin\/admin.php?page=check_before_theme-general-settings\">here<\/a> or disable this button for custom content.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_61ec0a1192579",
             "label": "CTA Section",
             "name": "cta_section",
             "type": "group",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62474fe9505a4",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -658,5 +727,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1645982136
+    "modified": 1648840871
 }

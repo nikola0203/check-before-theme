@@ -15,24 +15,24 @@ class Tags
   {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 		}
 
 		$time_string = sprintf(
 			$time_string,
 			esc_attr( get_the_date( DATE_W3C ) ),
 			esc_html( get_the_date() ),
-			esc_attr( get_the_modified_date( DATE_W3C ) ),
-			esc_html( get_the_modified_date() )
+			// esc_attr( get_the_modified_date( DATE_W3C ) ),
+			// esc_html( get_the_modified_date() )
 		);
 
-		$posted_on = sprintf(
-			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'check_before_theme' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-		);
+		// $posted_on = sprintf(
+		// 	/* translators: %s: post date. */
+		// 	esc_html_x( 'Posted on %s', 'post date', 'check_before_theme' ),
+		// 	'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		// );
 
-		echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<span class="posted-on">' . $time_string . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
   }
 
   public static function posted_by()
@@ -44,6 +44,29 @@ class Tags
 		);
 
 		echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+  }
+
+  /**
+   * Post ID
+   *
+   * @param int $post_id
+   * @return void
+   */
+  public static function reading_time( $post_id )
+  {
+    $content     = get_post_field( 'post_content', $post_id );
+    $word_count  = str_word_count( strip_tags( $content ) );
+    $readingtime = ceil( $word_count / 200 );
+    
+    if ( $readingtime == 1 ) {
+      $timer = "min read";
+    } else {
+      $timer = "min read";
+    }
+
+    $totalreadingtime = $readingtime . $timer;
+
+		echo '<span class="fw-bold post-read-time"> ' . $totalreadingtime . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
   }
   
   public static function entry_footer()

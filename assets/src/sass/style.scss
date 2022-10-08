@@ -93,6 +93,7 @@
 @import 'sections/features';
 @import 'sections/cta';
 @import 'sections/steps';
+@import 'sections/recent-posts';
 @import 'sections/pricing/hero';
 @import 'sections/pricing/packages';
 @import 'sections/why/hero';
@@ -118,6 +119,7 @@
 # Pages
 --------------------------------------------------------------*/
 @import 'pages/404';
+@import 'pages/single-post';
 
 /*--------------------------------------------------------------
 # WooCommerce

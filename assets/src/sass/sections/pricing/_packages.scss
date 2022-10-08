@@ -1,4 +1,10 @@
 .section-pricing-packages {
+  .section-pricing-packages-wrapper {
+    > .row {
+      @include padding-left(12px);
+      @include padding-right(12px);
+    }
+  }
   .pricing-package-name {
     @include font-size(20px);
     color: $primary;
@@ -21,6 +27,12 @@
   .pricing-package-desc,
   .pricing-list-desc {
     color: $primary;
+  }
+  .info-billed-annually {
+    display: none;
+    &.active {
+      display: block;
+    }
   }
   .featured-package-triangle {
     position: absolute;

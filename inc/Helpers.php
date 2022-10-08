@@ -6,6 +6,19 @@
  * @package check_before_theme
  */
 
+if ( ! function_exists( 'print_var' ) ) {
+	/**
+	 * Var_dump and die method
+	 *
+	 * @return void
+	 */
+	function print_var($x) {
+		echo '<pre>';
+		print_r($x);
+		echo '</pre>';
+	}
+}
+
 if ( ! function_exists( 'dd' ) ) {
 	/**
 	 * Var_dump and die method

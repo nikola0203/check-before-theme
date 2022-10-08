@@ -1,12 +1,12 @@
 {
-    "key": "group_6144a6de35215",
-    "title": "[Options Page] Theme Settings",
+    "key": "group_6244a51c058f1",
+    "title": "[Single] Posts",
     "fields": [
         {
-            "key": "field_6241ff9f31dd7",
-            "label": "Footer Settings",
+            "key": "field_6244a5296be93",
+            "label": "Section Hero",
             "name": "",
-            "type": "accordion",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,15 +15,14 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
-            "multi_expand": 0,
+            "placement": "top",
             "endpoint": 0
         },
         {
-            "key": "field_6144a7a1d4dde",
-            "label": "Footer Settings",
-            "name": "footer_settings",
-            "type": "group",
+            "key": "field_6244a53b6be94",
+            "label": "Hero Background",
+            "name": "hero_background",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -32,58 +31,22 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_6144a77de921e",
-                    "label": "Footer Logo",
-                    "name": "footer_logo",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_6235b082dc5eb",
-                    "label": "Footer Copyright",
-                    "name": "footer_copyright",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "text",
-                    "media_upload": 0,
-                    "toolbar": "full",
-                    "delay": 0
-                }
-            ]
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
-            "key": "field_6241ffa731dd8",
-            "label": "CTA Section",
-            "name": "",
-            "type": "accordion",
+            "key": "field_6244acb66be95",
+            "label": "Hero Content",
+            "name": "hero_content",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -92,18 +55,63 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
-            "multi_expand": 0,
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_624753495807b",
+            "label": "Section CTA",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
             "endpoint": 0
         },
         {
-            "key": "field_6241ffcd31dd9",
+            "key": "field_624753565807c",
+            "label": "Show Global CTA Section",
+            "name": "show_global_cta_section",
+            "type": "true_false",
+            "instructions": "Content of the section defined <a href=\"\/wp-admin\/admin.php?page=check_before_theme-general-settings\">here<\/a> or disable this button for custom content.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_624753705807d",
             "label": "CTA Section",
             "name": "cta_section",
             "type": "group",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_624753565807c",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -112,7 +120,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_6241ffdd31dda",
+                    "key": "field_6247537a5807e",
                     "label": "Title",
                     "name": "title",
                     "type": "text",
@@ -131,7 +139,7 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_6241ffe531ddb",
+                    "key": "field_624753835807f",
                     "label": "Description",
                     "name": "description",
                     "type": "wysiwyg",
@@ -150,7 +158,7 @@
                     "delay": 0
                 },
                 {
-                    "key": "field_6241fff331ddc",
+                    "key": "field_6247538c58080",
                     "label": "Button",
                     "name": "button",
                     "type": "link",
@@ -170,9 +178,9 @@
     "location": [
         [
             {
-                "param": "options_page",
+                "param": "post_type",
                 "operator": "==",
-                "value": "check_before_theme-general-settings"
+                "value": "post"
             }
         ]
     ],
@@ -185,5 +193,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1648492538
+    "modified": 1648841669
 }

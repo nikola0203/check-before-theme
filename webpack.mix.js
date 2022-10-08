@@ -12,7 +12,7 @@ mix.autoload({
 	jquery: ['$', 'window.jQuery', 'jQuery'],
 });
 
-mix.browserSync( 'http://checkbefore.test' );
+mix.browserSync( 'http://catchbefore.test' );
 
 mix.setPublicPath( './assets/dist' );
 

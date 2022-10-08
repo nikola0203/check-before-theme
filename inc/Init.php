@@ -8,7 +8,7 @@
 
 namespace CheckBeforeTheme;
 
-use WooCommerce;
+// use WooCommerce;
 
 final class Init
 {
@@ -28,13 +28,14 @@ final class Init
 			Setup\Menus::class,
 			Setup\Enqueue::class,
 			// Custom\PostTypes::class,
-			Custom\OptionsPages::class,
+			// Custom\OptionsPages::class,
 			// Api\Customizer::class,
 			Api\Shortcode\Shortcodes::class,
 			// Api\Widgets\TextWidget::class,
 			Plugins\Acf::class,
 			Plugins\ContactForm7::class,
 			Custom\Custom::class,
+			Custom\Filters::class,
 			Woo\Woo::class,
 		]; 
 	}

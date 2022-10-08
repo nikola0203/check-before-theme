@@ -9,4 +9,5 @@
 
 get_template_part( 'template-parts/sections/pricing/section', 'hero' );
 get_template_part( 'template-parts/sections/pricing/section', 'packages' );
+get_template_part( 'template-parts/sections/pricing/section', 'after-packages' );
 get_template_part( 'template-parts/sections/general/section', 'faq' );

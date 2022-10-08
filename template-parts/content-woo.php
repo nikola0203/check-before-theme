@@ -15,8 +15,6 @@
       <?php the_title( '<h1 class="entry-title text-center">', '</h1>' ); ?>
     </header><!-- .entry-header -->
   
-    <?php //check_before_theme_post_thumbnail(); ?>
-  
     <div class="entry-content">
       <?php the_content(); ?>
     </div><!-- .entry-content -->

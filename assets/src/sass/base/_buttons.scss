@@ -186,6 +186,15 @@ button {
       }
     }
   }
+  #payment {
+    #place_order {
+      width: auto;
+      float: right;
+      @include padding(14.5px 38px);
+      border-radius: 5px;
+      margin-bottom: 0;
+    }
+  }
 }
 
 .woocommerce {

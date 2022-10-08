@@ -19,7 +19,8 @@
 					align-items: center;
 					justify-content: space-between;
 					i {
-						transition: $transition-default;
+						@include font-size(14px);
+						transition: transform 320ms ease;;
 					}
 					&.active {
 						i {
@@ -96,6 +97,22 @@
 						@include padding(14px 0);
 					}
 				}
+				li.phone {
+					a {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+  @include media-breakpoint-down(xxl) {
+		#primary-menu-container {
+			ul.menu {
+				> li.menu-item {
+					> a {
+						@include font-size(14px);
+					}
+				}
 			}
 		}
 	}
@@ -150,7 +167,7 @@
 			}
 		}
 	}
-  @include media-breakpoint-up(xl) {
+  @include media-breakpoint-up(xxl) {
 		#primary-menu-container {
 			ul.menu {
 				> li.menu-item {
