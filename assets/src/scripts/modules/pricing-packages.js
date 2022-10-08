@@ -40,20 +40,26 @@ class PricingPackages {
           variation_id      = $(this).data('variation_id'),
           el_month_price    = $(this).parent().find('span.span-price-month span.price'),
           el_annual_price   = $(this).parent().find('span.span-price-annual span.price'),
-          btn_get_started   = $(this).parents('.pricing-package-price').nextAll('.pricing-package-btn').find('a.btn-get-started')
-
+          btn_get_started   = $(this).parents('.pricing-package-price').nextAll('.pricing-package-btn').find('a.btn-get-started'),
+          el_info_price     = $(this).parents('.pricing-package-price').nextAll('.pricing-package-btn').find('.info-billed-annually-price')
+          
+          // info-billed-annually
+          // console.log(el_info_price.html())
       if ( num_of_users <= 15 && data_num_of_users == 'up-to-15-users' ) {
         thisClass.updatePackagePriceElement( data_payment_type, el_month_price, el_annual_price, variation_price )
         thisClass.updatePackageVariationIdElement( data_payment_type, el_month_price, el_annual_price, variation_id )
         thisClass.updatePackageButtonLink( data_payment_type, btn_get_started, variation_id )
+        thisClass.updateSmallInfoPrice( data_payment_type, el_info_price, variation_price )
       } else if ( num_of_users > 15 && num_of_users <= 50 && data_num_of_users == '16-to-50-users' ) {
         thisClass.updatePackagePriceElement( data_payment_type, el_month_price, el_annual_price, variation_price )
         thisClass.updatePackageVariationIdElement( data_payment_type, el_month_price, el_annual_price, variation_id )
         thisClass.updatePackageButtonLink( data_payment_type, btn_get_started, variation_id )
+        thisClass.updateSmallInfoPrice( data_payment_type, el_info_price, variation_price )
       } else if ( num_of_users > 50 && num_of_users <= 99 && data_num_of_users == '51-99-users' ) {
         thisClass.updatePackagePriceElement( data_payment_type, el_month_price, el_annual_price, variation_price )
         thisClass.updatePackageVariationIdElement( data_payment_type, el_month_price, el_annual_price, variation_id )
         thisClass.updatePackageButtonLink( data_payment_type, btn_get_started, variation_id )
+        thisClass.updateSmallInfoPrice( data_payment_type, el_info_price, variation_price )
       } else if ( num_of_users > 99 ) {
         $('.section-pricing-packages, .pricing-plans-wrapper').hide();
         $('.section-contact-us-form').fadeIn();
@@ -64,13 +70,13 @@ class PricingPackages {
   updatePackagePriceElement( data_payment_type, el_month_price, el_annual_price, variation_price ) {
     if ( variation_price == el_month_price.html() || variation_price == el_annual_price.html() ) {
       $('.section-contact-us-form').hide();
-      $('.section-pricing-packages, .pricing-plans-wrapper').fadeIn();
-      return false;
+      $('.section-pricing-packages, .pricing-plans-wrapper').fadeIn()
+      return false
     }
     if ( data_payment_type == 'month' ) {
-      $(el_month_price).hide().html(variation_price).fadeIn();
+      $(el_month_price).hide().html(variation_price).fadeIn()
     } else if ( data_payment_type == 'annual' ) {
-      $(el_annual_price).hide().html(variation_price).fadeIn();
+      $(el_annual_price).hide().html(variation_price).fadeIn()
     }
   }
 
@@ -96,60 +102,75 @@ class PricingPackages {
     }
   }
 
+  updateSmallInfoPrice( data_payment_type, el_info_price, variation_price ) {
+    let calc_annual_price = parseFloat( variation_price ) * 12
+    if ( data_payment_type == 'annual' ) {
+      $(el_info_price).hide().html(calc_annual_price).toggle()
+    }
+  }
+
   pricingPlansToggle() {
     $('.btn-group-pricing-plans button').on('click', function(e) {
       if ( $(this).hasClass('active') ) {
-        return false;
+        return false
       }
 
       let site_url = main_object.site_url
 
       $(this).addClass('active').siblings().removeClass('active')
       $('.pricing-package-price .span-price').toggleClass('active')
+
       
       if ( $(this).data('pricing_monthly') ) {
-        $("span.span-price-month span.price").each(function( index, element ) {
-          let variation_id    = $(this).data('variation_id')
-          let btn_get_started = $(this).parents('.pricing-package-price').nextAll('.pricing-package-btn').find('a.btn-get-started')
+        $("span.span-price-month span.price").each(function() {
+          let variation_id    = $(this).data('variation_id'),
+              btn_get_started = $(this).parents('.pricing-package-price').nextAll('.pricing-package-btn').find('a.btn-get-started')
 
           btn_get_started.attr('href', site_url + '/checkout/?add-to-cart=' + variation_id + '&quantity=1')
         })
+
+        $(".info-billed-annually").toggleClass('active')
       } else if ( $(this).data('pricing_annual') ) {
-        $("span.span-price-annual span.price").each(function( index, element ) {
-          let variation_id    = $(this).data('variation_id')
-          let btn_get_started = $(this).parents('.pricing-package-price').nextAll('.pricing-package-btn').find('a.btn-get-started')
+        $("span.span-price-annual span.price").each(function() {
+          let variation_id    = $(this).data('variation_id'),
+              btn_get_started = $(this).parents('.pricing-package-price').nextAll('.pricing-package-btn').find('a.btn-get-started')
 
           btn_get_started.attr('href', site_url + '/checkout/?add-to-cart=' + variation_id + '&quantity=1')
         })
+
+        $(".info-billed-annually").toggleClass('active')
       }
+
+      let package_price_height = $(".pricing-package-price-block").innerHeight() + 1
+
+      $( "#pricing-package-price-block-height" ).css({ 'height': ( package_price_height + 'px' ) })
     })
   }
 
   syncColumnHeight() {
-    if ( $(window).width() > 991) {
-      let package_name_height  = $(".pricing-package-name").innerHeight() + 2;
-      let package_price_height = $(".pricing-package-price-block").innerHeight() + 1;
+    if ( $(window).width() > 991 ) {
+      let package_name_height  = $(".pricing-package-name").innerHeight() + 2,
+          package_price_height = $(".pricing-package-price-block").innerHeight() + 1
       
-      $( "#pricing-package-name-height" ).css({ 'height': ( package_name_height + 'px' ) });
-      $( "#pricing-package-price-block-height" ).css({ 'height': ( package_price_height + 'px' ) });
+      $( "#pricing-package-name-height" ).css({ 'height': ( package_name_height + 'px' ) })
+      $( "#pricing-package-price-block-height" ).css({ 'height': ( package_price_height + 'px' ) })
       
       $( ".pricing-list-desc" ).each(function( index, element ) {
-        let package_price_desc = $(element).innerHeight() + 1;
-
-        $( '.pricing-package-checkmark-' + index ).css({ 'height': ( package_price_desc + 'px' ) });
-      });
+        let package_price_desc = $(element).innerHeight() + 1
+        $( '.pricing-package-checkmark-' + index ).css({ 'height': ( package_price_desc + 'px' ) })
+      })
       
       $(window).on('resize', function() {
-        let package_name_height  = $(".pricing-package-name").innerHeight() + 2;
-        let package_price_height = $(".pricing-package-price-block").innerHeight() + 1;
+        let package_name_height  = $(".pricing-package-name").innerHeight() + 2,
+            package_price_height = $(".pricing-package-price-block").innerHeight() + 1
         
-        $( "#pricing-package-name-height" ).css({ 'height': ( package_name_height + 'px' ) });
-        $( "#pricing-package-price-block-height" ).css({ 'height': ( package_price_height + 'px' ) });
-        $( "#pricing-package-price-block-height" ).css({ 'height': ( package_price_height + 'px' ) });
+        $( "#pricing-package-name-height" ).css({ 'height': ( package_name_height + 'px' ) })
+        $( "#pricing-package-price-block-height" ).css({ 'height': ( package_price_height + 'px' ) })
+        $( "#pricing-package-price-block-height" ).css({ 'height': ( package_price_height + 'px' ) })
       
         $( ".pricing-list-desc" ).each(function( index, element ) {
-          let package_price_desc = $(element).innerHeight() + 1;
-          $( '.pricing-package-checkmark-' + index ).css({ 'height': ( package_price_desc + 'px' ) });
+          let package_price_desc = $(element).innerHeight() + 1
+          $( '.pricing-package-checkmark-' + index ).css({ 'height': ( package_price_desc + 'px' ) })
         })
       })
     }
