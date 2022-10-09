@@ -61,16 +61,16 @@ class PricingPackages {
         thisClass.updatePackageButtonLink( data_payment_type, btn_get_started, variation_id )
         thisClass.updateSmallInfoPrice( data_payment_type, el_info_price, variation_price )
       } else if ( num_of_users > 99 ) {
-        $('.section-pricing-packages, .pricing-plans-wrapper').hide();
-        $('.section-contact-us-form').fadeIn();
+        $('.section-pricing-packages, .pricing-plans-wrapper, .section-contact-us-modal, .section-after-packages').hide()
+        $('.section-contact-us-form').fadeIn()
       }
     })
   }
 
   updatePackagePriceElement( data_payment_type, el_month_price, el_annual_price, variation_price ) {
     if ( variation_price == el_month_price.html() || variation_price == el_annual_price.html() ) {
-      $('.section-contact-us-form').hide();
-      $('.section-pricing-packages, .pricing-plans-wrapper').fadeIn()
+      $('.section-contact-us-form').hide()
+      $('.section-pricing-packages, .pricing-plans-wrapper, .section-contact-us-modal, .section-after-packages').fadeIn()
       return false
     }
     if ( data_payment_type == 'month' ) {
@@ -180,7 +180,7 @@ class PricingPackages {
     let num_of_users = parseInt(sessionStorage.getItem('num_of_users'))
 
     if ( num_of_users > 99 ) {
-      $('table.woocommerce-checkout-review-order-table, h4.woocommerce-order-details__title, th.woocommerce-table__product-name, th.woocommerce-table__product-table, li.woocommerce-order-overview__total.total').hide()
+      $('table.woocommerce-checkout-review-order-table, h4.woocommerce-order-details__title, th.woocommerce-table__product-name, th.woocommerce-table__product-table, li.woocommerce-order-overview__total.total, .section-contact-us-modal, .section-after-packages').hide()
     }
 
     if ( $('body.woocommerce-order-received').length ) {

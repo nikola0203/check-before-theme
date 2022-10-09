@@ -87,6 +87,20 @@ button {
   }
 }
 
+.btn-close {
+  @include font-size(26px);
+  i {
+    transition: color $time $ease;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    i {
+      color: darken( $red, 10% );
+    }
+  }
+}
+
 // Mobile nav-menu toggle
 .navtoggle {
   display: none;
@@ -208,5 +222,12 @@ button {
     &:focus {
       background-color: darken( $secondary, 10% );
     }
+  }
+}
+
+.btn-contact-us-modal {
+  &:focus,
+  &:hover {
+    color: $secondary;
   }
 }

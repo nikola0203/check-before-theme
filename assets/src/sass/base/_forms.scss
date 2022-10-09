@@ -4,7 +4,7 @@ form {
   optgroup,
   textarea {
     width: 100%;
-    transition: $transition-default;
+    transition: border $time $ease;
     &:focus {
       border: 1px solid $secondary;
     }
@@ -71,6 +71,11 @@ form.search-form {
 }
 
 // Contact form 7
+.wpcf7 {
+  .screen-reader-response {
+    display: none;
+  }
+}
 form.wpcf7-form {
   .wpcf7-form-control-wrap {
     display: block;
@@ -78,17 +83,21 @@ form.wpcf7-form {
   }
   .wpcf7-form-control {
     &.wpcf7-not-valid {
-      border: 2px solid $red;
-    }
-    &:focus {
-      border: 2px solid $cyan;
+      border: 1px solid $red;
     }
   }
-  .wpcf7-response-output {
-    @include margin(0 0 40px);
+  .wpcf7-not-valid-tip {
+    @include margin-left(15px);
   }
   .ajax-loader {
     margin-top: 5px;
+  }
+  .wpcf7-spinner {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: 9;
+    transform: translateY(-50%);
   }
 }
 

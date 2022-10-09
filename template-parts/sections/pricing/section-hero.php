@@ -42,9 +42,20 @@ $allowedHtml = array(
         <button type="button" data-pricing_annual="annual" class="btn btn-white border-start-0 btn-pricing-plans btn-pricing-plan-annual active">Annual payment</button>
       </div>
     </div>
-    <div class="section-contact-us-form text-center">
-      <h3>Contact us for the best possible price</h3>
-      <a href="<?php echo esc_url( site_url( '/checkout/?add-to-cart=382&amp;quantity=1' ) ) ?>" title="<?php esc_attr_e( 'Contact us' ); ?>" class="btn btn-get-started"><?php esc_html_e( 'Get Started' ); ?></a>
+    <div class="section-contact-us-form">
+      <h3 class="text-center">Contact us for the best possible price</h3>
+      <?php
+      if ( get_field( 'contact_form_shortcode' ) ) :
+        ?>
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <?php echo do_shortcode( get_field( 'contact_form_shortcode' ) ); ?>
+          </div>
+        </div>
+        <?php
+      endif;
+      ?>
+      <!-- <a href="<?php // echo esc_url( site_url( '/checkout/?add-to-cart=382&amp;quantity=1' ) ) ?>" title="<?php // esc_attr_e( 'Contact us' ); ?>" class="btn btn-get-started"><?php // esc_html_e( 'Get Started' ); ?></a> -->
     </div>
   </div>
 </section>
