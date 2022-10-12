@@ -4,8 +4,9 @@
  *
  */
 
-$hero        = get_field( 'hero_section' );
-$allowedHtml = array(
+$hero                 = get_field( 'hero_section' );
+$contact_form_section = get_field( 'contact_form_section' );
+$allowedHtml          = array(
   'br' => array(),
 );
 ?>
@@ -43,19 +44,22 @@ $allowedHtml = array(
       </div>
     </div>
     <div class="section-contact-us-form">
-      <h3 class="text-center">Contact us for the best possible price</h3>
       <?php
-      if ( get_field( 'contact_form_shortcode' ) ) :
+      if ( $contact_form_section['section_title'] ) :
+        ?>
+        <h3 class="text-center"><?php esc_html_e( $contact_form_section['section_title'] ); ?></h3>
+        <?php
+      endif;
+      if ( $contact_form_section['contact_form_shortcode'] ) :
         ?>
         <div class="row justify-content-center">
           <div class="col-lg-6">
-            <?php echo do_shortcode( get_field( 'contact_form_shortcode' ) ); ?>
+            <?php echo do_shortcode( $contact_form_section['contact_form_shortcode'] ); ?>
           </div>
         </div>
         <?php
       endif;
       ?>
-      <!-- <a href="<?php // echo esc_url( site_url( '/checkout/?add-to-cart=382&amp;quantity=1' ) ) ?>" title="<?php // esc_attr_e( 'Contact us' ); ?>" class="btn btn-get-started"><?php // esc_html_e( 'Get Started' ); ?></a> -->
     </div>
   </div>
 </section>
