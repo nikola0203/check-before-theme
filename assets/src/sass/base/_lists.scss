@@ -1,3 +1,10 @@
+ul,
+ol {
+  @include media-breakpoint-down(sm) {
+    @include padding-left(24px);
+  }
+}
+
 ul:not(.menu),
 ol {
   @include margin-bottom(20px);
@@ -5,6 +12,64 @@ ol {
     @include margin-bottom(6px);
     &::marker {
       color: $cyan;
+    }
+  }
+}
+
+body {
+	&.page-template-default,
+	&.post-template-default {
+		article.post,
+		article.page {
+			.entry-content {
+				ul:not(.menu),
+        ol {
+          font-weight: 600;
+          li {
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+			}
+      @include media-breakpoint-down(lg) {
+        .entry-content {
+          ul:not(.menu),
+          ol {
+            li {
+              @include margin-bottom(15px);
+            }
+          }
+        }
+      }
+      @include media-breakpoint-up(lg) {
+        .entry-content {
+          ul:not(.menu),
+          ol {
+            li {
+              @include margin-bottom(20px);
+            }
+          }
+        }
+      }
+		}
+	}
+}
+
+ul.checkmark-list,
+ol.checkmark-list {
+  li {
+    @include padding-left(10px);
+    &::marker {
+      content: '\f058';
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 400;
+      color: $secondary;
     }
   }
 }

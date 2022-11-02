@@ -1,4 +1,19 @@
 section.section-home-hero {
+  .hero-title {
+    @include font-size(56px);
+  }
+  .hero-content {
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    @include media-breakpoint-up(lg) {
+      p {
+        @include font-size(20px);
+      }
+    }
+  }
   @include media-breakpoint-down(lg) {
     .hero-image {
       img {
@@ -14,16 +29,4 @@ section.section-home-hero {
   //     min-height: 320px;
   //   }
   // }
-}
-.hero-content {
-  p {
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  @include media-breakpoint-up(lg) {
-    p {
-      @include font-size(20px);
-    }
-  }
 }

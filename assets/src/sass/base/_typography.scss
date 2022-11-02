@@ -17,7 +17,7 @@ h6,
 
 h1,
 .h1 {
-	@include font-size(56px);
+	// @include font-size(56px);
 	@include margin-bottom(30px);
 }
 
@@ -43,7 +43,10 @@ body {
 		article.post,
 		article.page {
 			.entry-content {
-				@include font-size(18px);
+				@include font-size(20px);
+				p {
+					@include margin-bottom(30px);
+				}
 			}
 		}
 	}
