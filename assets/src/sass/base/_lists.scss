@@ -31,6 +31,10 @@ body {
             }
           }
         }
+        b,
+        strong {
+          color: $primary;
+        }
 			}
       @include media-breakpoint-down(lg) {
         .entry-content {
