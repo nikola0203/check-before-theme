@@ -77,3 +77,49 @@ ol.checkmark-list {
     }
   }
 }
+
+ul.list-contact-data {
+  @include font-size(20px);
+  color: $black;
+  li {
+    @include padding-left(10px);
+    &::marker {
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 700;
+      @include font-size(16px);
+      color: $secondary;
+    }
+    &.list-contact-data-sales {
+      &::marker {
+        content: '\f2b5';
+      }
+    }
+    &.list-contact-data-phone {
+      &::marker {
+        content: '\f879';
+      }
+    }
+    &.list-contact-data-email {
+      &::marker {
+        content: '\f0e0';
+      }
+    }
+    &.list-contact-data-address {
+      &::marker {
+        content: '\f3c5';
+      }
+    }
+    a {
+      &:hover,
+      &:active,
+      &:focus {
+        color: $secondary;
+      }
+    }
+  }
+}

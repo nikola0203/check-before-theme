@@ -10,11 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-8 mb-md-15' ); ?>>
-  <header class="entry-header bg-light py-8 py-md-18">
-    <div class="container">
-      <?php the_title( '<h1 class="entry-title text-center mb-0">', '</h1>' ); ?>
-    </div>
-  </header><!-- .entry-header -->
+  <?php get_template_part( 'template-parts/sections/general/section', 'hero' ); ?>
   
   <div class="entry-content container mt-8 mt-md-15">
     <div class="row justify-content-center">

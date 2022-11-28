@@ -15,7 +15,7 @@ $allowedHtml    = array(
 ?>
 <section class="section-home-hero bg-light pt-10 pt-lg-18 mb-10 mb-lg-18">
   <?php
-  if ( $hero['hero_slider'] ) :
+  if ( ! empty( $hero['hero_slider'] ) ) :
     ?>
     <div class="swiper slider-home-hero" data-speed="<?php esc_attr_e( $hero['speed'] ); ?>" data-autoplay_delay="<?php esc_attr_e( $hero['autoplay_delay'] ); ?>">
       <div class="swiper-wrapper">
@@ -27,22 +27,22 @@ $allowedHtml    = array(
               <div class="row">
                 <div class="col-lg-6 d-flex justify-content-center flex-column">
                   <?php
-                  if ( !empty( $hero_slider['title'] ) ) :
+                  if ( ! empty( $hero_slider['title'] ) ) :
                     ?>
                     <h1 class="hero-title"><?php echo wp_kses( $hero_slider['title'], $allowedHtml ); ?></h1>
                     <?php
                   endif;
-                  if ( !empty( $hero_slider['content'] ) ) :
+                  if ( ! empty( $hero_slider['content'] ) ) :
                     ?>
-                    <div class="hero-content mb-8 mb-lg-12">
+                    <div class="hero-content mb-6 mb-lg-8">
                       <?php echo wp_kses_post( $hero_slider['content'] ); ?>
                     </div>
                     <?php
                   endif;
-                  if ( !empty( $hero_slider['button'] ) ) :
+                  if ( ! empty( $hero_slider['button'] ) ) :
                     ?>
                     <div class="hero-button mb-12 mb-xl-0">
-                      <a href="<?php echo esc_url( $hero_slider['button']['url'] ); ?>" target="<?php esc_attr_e( $hero_slider['button']['target'] ); ?>" title="<?php esc_attr_e( $hero_slider['button']['title'] ); ?>" class="btn"><?php esc_html_e( $hero_slider['button']['title'] ); ?>&nbsp;<span class="icon-btn"><?php echo arrow_right(); ?></span></a>
+                      <a href="<?php echo esc_url( $hero_slider['button']['url'] ); ?>" target="<?php esc_attr_e( $hero_slider['button']['target'] ); ?>" title="<?php esc_attr_e( $hero_slider['button']['title'] ); ?>" class="btn"><?php esc_html_e( $hero_slider['button']['title'] ); ?></a>
                     </div>
                     <?php
                   endif;
@@ -50,7 +50,7 @@ $allowedHtml    = array(
                 </div>
                 <div class="col-lg-6">
                   <?php
-                  if ( !empty( $hero_slider['image'] ) ) :
+                  if ( ! empty( $hero_slider['image'] ) ) :
                     ?>
                     <div class="hero-image">
                       <img src="<?php echo esc_url( $hero_slider['image']['sizes']['medium_large'] ); ?>" alt="<?php esc_attr_e( $hero_slider['image']['alt'] ); ?>" class="d-block mx-auto">
