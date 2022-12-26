@@ -241,10 +241,10 @@
                                     "parent_repeater": "field_61f7e9255867f"
                                 },
                                 {
-                                    "key": "field_61f7e93658681",
-                                    "label": "Yes\/No",
-                                    "name": "yesno",
-                                    "type": "true_false",
+                                    "key": "field_63a85773542cf",
+                                    "label": "Link",
+                                    "name": "link",
+                                    "type": "link",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -253,11 +253,27 @@
                                         "class": "",
                                         "id": ""
                                     },
+                                    "return_format": "array",
+                                    "parent_repeater": "field_61f7e9255867f"
+                                },
+                                {
+                                    "key": "field_61f7e93658681",
+                                    "label": "Yes\/No",
+                                    "name": "yesno",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "15",
+                                        "class": "",
+                                        "id": ""
+                                    },
                                     "message": "",
                                     "default_value": 1,
-                                    "ui": 1,
                                     "ui_on_text": "",
                                     "ui_off_text": "",
+                                    "ui": 1,
                                     "parent_repeater": "field_61f7e9255867f"
                                 }
                             ],
@@ -649,5 +665,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1665563855
+    "modified": 1671976924
 }

@@ -27,6 +27,13 @@
   .pricing-package-desc,
   .pricing-list-desc {
     color: $primary;
+    .number-of-users-tooltip {
+      cursor: pointer;
+      &:hover,
+      &:focus {
+        color: $white;
+      }
+    }
   }
   .info-billed-annually {
     display: none;

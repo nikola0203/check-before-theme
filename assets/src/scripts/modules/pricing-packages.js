@@ -4,10 +4,14 @@ class PricingPackages {
 	}
 
   init() {
-		this.changePackagePrice();
-		this.syncColumnHeight();
-		this.pricingPlansToggle();
-		this.updateWooCheckoutField();
+    const thisClass = this
+
+    window.addEventListener('load', function(){
+      thisClass.changePackagePrice()
+      thisClass.syncColumnHeight()
+      thisClass.pricingPlansToggle()
+      thisClass.updateWooCheckoutField()
+    })
 	}
 
   changePackagePrice() {
@@ -16,7 +20,7 @@ class PricingPackages {
     let num_of_users = sessionStorage.getItem('num_of_users')
 
     if ( !num_of_users ) {
-      sessionStorage.setItem('num_of_users', 15)
+      sessionStorage.setItem('num_of_users', 1)
     }
 
     this.loopTroughPriceInputAndUpdate(".pricing-package-price input", num_of_users)
@@ -31,36 +35,41 @@ class PricingPackages {
   }
 
   loopTroughPriceInputAndUpdate( package_price_input, num_of_users ) {
-    const thisClass = this;
+    const thisClass = this
 
     $(package_price_input).each(function(index, element) {
-      let variation_price   = $(this).val(),
-          data_num_of_users = $(this).data('num_of_users'),
-          data_payment_type = $(this).data('payment_type'),
-          variation_id      = $(this).data('variation_id'),
-          el_month_price    = $(this).parent().find('span.span-price-month span.price'),
-          el_annual_price   = $(this).parent().find('span.span-price-annual span.price'),
-          btn_get_started   = $(this).parents('.pricing-package-price').nextAll('.pricing-package-btn').find('a.btn-get-started'),
-          el_info_price     = $(this).parents('.pricing-package-price').nextAll('.pricing-package-btn').find('.info-billed-annually-price')
-          
-          // info-billed-annually
-          // console.log(el_info_price.html())
-      if ( num_of_users <= 15 && data_num_of_users == 'up-to-15-users' ) {
+      let this_element      = $(this),
+          variation_price   = this_element.val(),
+          data_num_of_users = this_element.data('num_of_users'),
+          data_payment_type = this_element.data('payment_type'),
+          variation_id      = this_element.data('variation_id'),
+          el_month_price    = this_element.parent().find('span.span-price-month span.price'),
+          el_annual_price   = this_element.parent().find('span.span-price-annual span.price'),
+          btn_get_started   = this_element.parents('.pricing-package-price').nextAll('.pricing-package-btn').find('a.btn-get-started'),
+          el_info_price     = this_element.parents('.pricing-package-price').nextAll('.pricing-package-btn').find('.info-billed-annually-price')
+
+      if ( num_of_users == 1 && data_num_of_users == 'up-to-15-users' ) {
+        $('.section-pricing-packages, .pricing-plans-wrapper, .section-contact-us-modal, .section-after-packages').fadeIn()
+        $('.section-contact-us-form').hide()
         thisClass.updatePackagePriceElement( data_payment_type, el_month_price, el_annual_price, variation_price )
         thisClass.updatePackageVariationIdElement( data_payment_type, el_month_price, el_annual_price, variation_id )
         thisClass.updatePackageButtonLink( data_payment_type, btn_get_started, variation_id )
         thisClass.updateSmallInfoPrice( data_payment_type, el_info_price, variation_price )
-      } else if ( num_of_users > 15 && num_of_users <= 50 && data_num_of_users == '16-to-50-users' ) {
+      } else if ( num_of_users == 16 && data_num_of_users == '16-to-50-users' ) {
+        $('.section-pricing-packages, .pricing-plans-wrapper, .section-contact-us-modal, .section-after-packages').fadeIn()
+        $('.section-contact-us-form').hide()
         thisClass.updatePackagePriceElement( data_payment_type, el_month_price, el_annual_price, variation_price )
         thisClass.updatePackageVariationIdElement( data_payment_type, el_month_price, el_annual_price, variation_id )
         thisClass.updatePackageButtonLink( data_payment_type, btn_get_started, variation_id )
         thisClass.updateSmallInfoPrice( data_payment_type, el_info_price, variation_price )
-      } else if ( num_of_users > 50 && num_of_users <= 99 && data_num_of_users == '51-99-users' ) {
+      } else if ( num_of_users == 51 && data_num_of_users == '51-99-users' ) {
+        $('.section-pricing-packages, .pricing-plans-wrapper, .section-contact-us-modal, .section-after-packages').fadeIn()
+        $('.section-contact-us-form').hide()
         thisClass.updatePackagePriceElement( data_payment_type, el_month_price, el_annual_price, variation_price )
         thisClass.updatePackageVariationIdElement( data_payment_type, el_month_price, el_annual_price, variation_id )
         thisClass.updatePackageButtonLink( data_payment_type, btn_get_started, variation_id )
         thisClass.updateSmallInfoPrice( data_payment_type, el_info_price, variation_price )
-      } else if ( num_of_users > 99 ) {
+      } else if ( num_of_users == 100 ) {
         $('.section-pricing-packages, .pricing-plans-wrapper, .section-contact-us-modal, .section-after-packages').hide()
         $('.section-contact-us-form').fadeIn()
       }

@@ -13,18 +13,24 @@ $allowedHtml          = array(
 <section class="section-pricing-hero bg-light py-10 py-lg-18 mb-10 mb-lg-12">
   <div class="container">
     <?php
-    if ( !empty( $hero['title'] ) ) :
+    if ( ! empty( $hero['title'] ) ) :
       ?>
       <h1 class="hero-title text-center"><?php echo wp_kses( $hero['title'], $allowedHtml ); ?></h1>
       <?php
     endif;
-    if ( !empty( $hero['subtitle'] ) ) :
+    if ( ! empty( $hero['subtitle'] ) ) :
       ?>
       <div class="d-flex justify-content-center flex-column flex-md-row align-items-center mb-10">
         <h4 class="text-center mb-md-0"><?php echo wp_kses( $hero['subtitle'], $allowedHtml ); ?></h4>
         <div class="d-flex justify-content-center align-items-start">
-          <input type="number" min="1" value="15" name="number-of-users" id="number-of-users" class="border ms-5">
-          <span data-bs-toggle="tooltip" data-bs-placement="top" title="Enter the number of users (prices will change accordingly)" class="number-of-users-tooltip d-flex justify-content-center align-items-center ms-1 mt-3 rounded-circle fw-bold">&quest;</span>
+          <select name="number-of-users" id="number-of-users" class="border ms-5">
+            <option value="1" selected="selected">1-15</option>
+            <option value="16">16-50</option>
+            <option value="51">51-99</option>
+            <option value="100">100+</option>
+          </select>
+          <!-- <input type="number" min="1" value="15" name="number-of-users" id="number-of-users" class="border ms-5"> -->
+          <span data-bs-toggle="tooltip" data-bs-placement="top" title="Select the number of users (prices will change accordingly)" class="number-of-users-tooltip d-flex justify-content-center align-items-center ms-1 mt-3 rounded-circle fw-bold">&quest;</span>
         </div>
       </div>
       <?php

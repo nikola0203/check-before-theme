@@ -8,12 +8,11 @@ $packages    = get_field( 'packages_section' );
 $allowedHtml = array(
   'br' => array(),
 );
-
 ?>
 <section class="section-pricing-packages pb-4 pb-lg-8">
   <div class="container">
     <?php
-    if ( !empty( $packages['packages'] ) ) :
+    if ( ! empty( $packages['packages'] ) ) :
       $x      = 1;
       $length = count( $packages['packages'] );
       ?>
@@ -52,7 +51,16 @@ $allowedHtml = array(
                     <?php
                   endif;
                   ?>
-                  <div class="pricing-list-desc p-5 fw-bold border-start border-bottom <?php echo ( $count_1 != $pkg_length ) ? '' : ''; ?>"><?php esc_html_e( $feature['feature_name'] ); ?></div>
+                  <div class="pricing-list-desc p-5 fw-bold border-start border-bottom d-flex <?php echo ( $count_1 != $pkg_length ) ? '' : ''; ?>">
+                    <span><?php esc_html_e( $feature['feature_name'] ); ?></span>
+                    <?php
+                    if ( ! empty( $feature['link'] ) ) :
+                      ?>
+                      <a href="<?php echo esc_url( $feature['link']['url'] ); ?>" class="number-of-users-tooltip d-flex justify-content-center align-items-center ms-1 rounded-circle fw-bold " title="<?php esc_attr_e( $feature['link']['title'] ); ?>">&quest;</a>
+                      <?php
+                    endif;
+                    ?>
+                  </div>
                   <?php
                   $count_1++;
                 endforeach;
@@ -130,7 +138,16 @@ $allowedHtml = array(
                   foreach ( $package['features'] as $key => $feature ) :
                     ?>
                     <div class="pricing-package-checkmark pricing-package-checkmark-<?php esc_attr_e( $count_2 ); ?> pricing-list-desc d-flex justify-content-between justify-content-lg-center align-items-center p-5 px-sm-8 border-bottom border-end border-start-md <?php echo ( $count_2 != $pkg_length ) ? '' : ''; ?>">
-                      <div class="fw-bold text-start me-4 d-lg-none"><?php esc_html_e( $feature['feature_name'] ); ?></div>
+                      <div class="fw-bold text-start me-4 d-flex d-lg-none">
+                        <span><?php esc_html_e( $feature['feature_name'] ); ?></span>
+                        <?php
+                        if ( ! empty( $feature['link'] ) ) :
+                          ?>
+                          <a href="<?php echo esc_url( $feature['link']['url'] ); ?>" class="number-of-users-tooltip d-flex justify-content-center align-items-center ms-1 rounded-circle fw-bold " title="<?php esc_attr_e( $feature['link']['title'] ); ?>">&quest;</a>
+                          <?php
+                        endif;
+                        ?>
+                      </div>
                       <?php 
                       if ( !empty( $feature['yesno'] ) ) :
                         ?>
