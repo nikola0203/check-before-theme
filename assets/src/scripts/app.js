@@ -20,6 +20,7 @@ import Slider from './modules/slider.js';
 import Faq from './modules/faq.js';
 import PricingPackages from './modules/pricing-packages.js';
 import BsTooltip from './modules/bs-tooltip.js';
+import ProgressBar from './modules/progress-bar.js';
 
 // const app = new App();
 const nav_menu = new NavMenu();
@@ -27,3 +28,4 @@ const slider = new Slider();
 const faq = new Faq();
 const pricing_packages = new PricingPackages();
 const bs_tooltip = new BsTooltip();
+const progress_bar = new ProgressBar()

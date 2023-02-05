@@ -3,8 +3,9 @@
 import 'swiper/css'
 // modules styles
 // import 'swiper/css/pagination'
+import 'swiper/css/scrollbar'
 
-import Swiper, { Autoplay } from 'swiper';
+import Swiper, { Autoplay, Scrollbar } from 'swiper';
 
 class Slider {
 	constructor() {
@@ -12,16 +13,24 @@ class Slider {
 	}
 
 	init() {
-		this.heroSlider();
+    const thisClass = this
+
+    window.addEventListener('load', function(){
+			thisClass.heroSlider()
+			thisClass.featuresList()
+			thisClass.featuresListNav()
+		})
 	}
 
 	heroSlider() {
-		$(".slider-home-hero").each(function(index, element){
-			$(this).addClass("slider-home-hero-" + index)
+		const sliders = document.querySelectorAll('.slider-home-hero')
 
-			let speed = $(this).data('speed'),
-					autoplay_delay = $(this).data('autoplay_delay')
-			
+		sliders.forEach(function(slider, index) {
+			slider.classList.add("slider-home-hero-" + index)
+
+			let	speed = parseInt(slider.dataset.speed),
+					autoplay_delay = parseInt(slider.dataset.autoplay_delay)
+
 			new Swiper(".slider-home-hero-" + index, {
 				modules: [Autoplay],
 				slidesPerView: 1,
@@ -31,11 +40,50 @@ class Slider {
 				autoplay: {
 					delay: autoplay_delay,
 					disableOnInteraction: false,
+				}
+			})
+		})
+	}
+
+	featuresListNav() {
+		const sliders_tab = document.querySelectorAll('.slider-nav-features-list')
+
+		sliders_tab.forEach(function(sliders_tab, index) {
+			sliders_tab.classList.add("slider-nav-features-list-" + index)
+			
+			let features_nav_tab = new Swiper(".slider-nav-features-list-" + index, {
+				modules: [Scrollbar],
+				slidesPerView: "auto",
+				spaceBetween: 30,
+				autoHeight: true,
+				scrollbar: {
+					el: ".swiper-scrollbar",
+					draggable: true,
+					hide: false,
+				},
+			})
+		})
+	}
+
+	featuresList() {
+		const sliders_tab = document.querySelectorAll('.slider-features-tab')
+
+		sliders_tab.forEach(function(sliders_tab, index) {
+			sliders_tab.classList.add("slider-features-tab-" + index)
+			
+			let features_tab = new Swiper(".slider-features-tab-" + index, {
+				modules: [Scrollbar],
+				slidesPerView: "auto",
+				spaceBetween: 30,
+				autoHeight: true,
+				scrollbar: {
+					el: ".swiper-scrollbar",
+					draggable: true,
+					hide: false,
 				},
 			})
 		})
 	}
 }
 
-// import 'swiper/css/navigation'
 export default Slider;
